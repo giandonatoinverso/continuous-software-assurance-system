@@ -2,7 +2,6 @@ import subprocess
 import shutil
 import requests
 
-
 class Helper:
     def clone_repository(self, git_url, dest_path, access_token=None):
         if access_token is not None:
@@ -11,7 +10,11 @@ class Helper:
         clone_command = f"git clone {git_url} {dest_path}"
         subprocess.Popen(clone_command, shell=True).wait()
 
-    def download_file(self, url, dest_path):
+    def download_file(self, url, dest_path, access_token=None):
+        headers = {}
+        if access_token is not None:
+            headers['PRIVATE-TOKEN'] = access_token
+
         try:
             response = requests.get(url)
             response.raise_for_status()

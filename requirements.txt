@@ -3,3 +3,4 @@ six
 bandit[baseline]
 pyyaml
 requests
+paramiko

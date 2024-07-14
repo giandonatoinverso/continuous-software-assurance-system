@@ -5,16 +5,18 @@ from utils.helper import Helper
 
 
 class Bandit:
-    bandit_output = dict()
-    helper = Helper()
-    repository_path = os.getenv('REPOSITORY_PATH')
-    target = os.getenv('BANDIT_TARGET')
-    oauth_token = os.getenv('BANDIT_OAUTH_TOKEN', None)
-    input_path = os.getenv('BANDIT_INPUT')
-    output_path = os.getenv('BANDIT_OUTPUT')
-    html_path = os.getenv('BANDIT_HTML')
-    evaluation_severity = os.getenv('BANDIT_EVALUATION_SEVERITY')
-    evaluation_threshold = os.getenv('BANDIT_EVALUATION_THRESHOLD')
+    def __init__(self, repository_path, input_path, output_path, html_path, evaluation_severity, evaluation_threshold,
+                 target, oauth_token=None):
+        self.output = dict()
+        self.helper = Helper()
+        self.repository_path = repository_path
+        self.input_path = input_path
+        self.output_path = output_path
+        self.html_path = html_path
+        self.evaluation_severity = evaluation_severity
+        self.evaluation_threshold = evaluation_threshold
+        self.target = target
+        self.oauth_token = oauth_token
 
     def execute(self):
         self.download_resources()
@@ -32,7 +34,7 @@ class Bandit:
 
     def generate_output(self):
         bandit_parser = BanditParser(self.input_path)
-        self.bandit_output = bandit_parser.cwe_targets_aggregation(self.output_path)
+        self.output = bandit_parser.cwe_targets_aggregation(self.output_path)
         bandit_parser.json_to_html(self.output_path, self.html_path)
 
     def evaluate_output(self):
@@ -47,7 +49,7 @@ class Bandit:
         desired_level = int(severity_levels[self.evaluation_severity])
         counter = 0
 
-        issues = self.bandit_output["Issues"]
+        issues = self.output["Issues"]
         for issue in issues:
             current_severity = issue['severity']
             if severity_levels[current_severity] >= desired_level:
