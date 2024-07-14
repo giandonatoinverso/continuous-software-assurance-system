@@ -5,7 +5,9 @@
         "credential_label": "mainflux",
         "name": "Gosec",
         "target": "https://github.com/MainfluxLabs/mainflux",
-        "path": "data/mainflux_gosec",
+        "gosec_input": "data/raw/mainflux_gosec.json",
+        "gosec_output": "data/report/mainflux_gosec.json",
+        "gosec_html": "data/report/mainflux_gosec.html",
         "evaluation": {
           "severity": "MEDIUM",
           "threshold": 2
@@ -15,7 +17,9 @@
         "credential_label": "mainflux",
         "name": "Trivy Golang",
         "target": "https://github.com/MainfluxLabs/mainflux",
-        "path": "data/mainflux_trivy",
+        "trivy_input": "data/raw/mainflux_trivy.json",
+        "trivy_output": "data/report/mainflux_trivy.json",
+        "trivy_html": "data/report/mainflux_trivy.html",
         "evaluation": {
           "severity": "MEDIUM",
           "threshold": 2
@@ -26,7 +30,9 @@
         "name": "Trivy Docker",
         "compose_file": "https://github.com/MainfluxLabs/mainflux/blob/master/docker/docker-compose.yml",
         "env_file": "https://github.com/MainfluxLabs/mainflux/blob/master/docker/.env",
-        "path": "data/mainflux_docker",
+        "trivy_input": "data/raw/mainflux_docker.json",
+        "trivy_output": "data/report/mainflux_docker.json",
+        "trivy_html": "data/report/mainflux_docker.html",
         "evaluation": {
           "severity": "MEDIUM",
           "threshold": 2
@@ -48,7 +54,9 @@
       "bandit": {
         "name": "Bandit",
         "target": "https://github.com/home-assistant/core",
-        "path": "data/homeassistant_bandit",
+        "bandit_input": "data/raw/homeassistant_bandit.json",
+        "bandit_output": "data/report/homeassistant_bandit.json",
+        "bandit_html": "data/report/homeassistant_bandit.html",
         "evaluation": {
           "severity": "MEDIUM",
           "threshold": 2
@@ -57,7 +65,9 @@
       "trivy_fs": {
         "name": "Trivy Python",
         "target": "https://github.com/home-assistant/core",
-        "path": "data/homeassistant_trivy",
+        "trivy_input": "data/raw/homeassistant_trivy.json",
+        "trivy_output": "data/report/homeassistant_trivy.json",
+        "trivy_html": "data/report/homeassistant_trivy.html",
         "evaluation": {
           "severity": "MEDIUM",
           "threshold": 2
@@ -81,7 +91,9 @@
         "name": "Trivy RaspberryPi",
         "target": "172.20.28.55",
         "port": "2225",
-        "path": "data/raspberry_trivy",
+        "trivy_input": "data/raw/raspberry_trivy.json",
+        "trivy_output": "data/report/raspberry_trivy.json",
+        "trivy_html": "data/report/raspberry_trivy.html",
         "evaluation": {
           "severity": "MEDIUM",
           "threshold": 2
@@ -92,7 +104,8 @@
         "name": "Lynis",
         "target": "172.20.28.55",
         "port": "2225",
-        "path": "data/raspberry_lynis",
+        "lynis_input": "data/raw/raspberry_lynis.txt",
+        "lynis_output": "data/report/raspberry_lynis.json",
         "lynis_repository": "https://downloads.cisofy.com/lynis/lynis-3.1.1.tar.gz",
         "test_skip": [
           "PKGS-7345",
