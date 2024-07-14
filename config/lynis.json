@@ -1,0 +1,48 @@
+{
+  "RaspberryPi": {
+    "security_controls": {
+      "trivy_remotefs": {
+        "credential_label": "raspberry",
+        "name": "Trivy RaspberryPi",
+        "target": "172.20.28.55",
+        "port": "2225",
+        "trivy_input": "data/raw/raspberry_trivy.json",
+        "trivy_output": "data/report/raspberry_trivy.json",
+        "trivy_html": "data/report/raspberry_trivy.html",
+        "evaluation": {
+          "severity": "MEDIUM",
+          "threshold": 2
+        }
+      },
+      "lynis": {
+        "credential_label": "raspberry",
+        "name": "Lynis",
+        "target": "172.20.28.55",
+        "port": "2225",
+        "lynis_input": "data/raw/raspberry_lynis.txt",
+        "lynis_output": "data/report/raspberry_lynis.json",
+        "lynis_repository": "https://downloads.cisofy.com/lynis/lynis-3.1.1.tar.gz",
+        "test_skip": [
+          "PKGS-7345",
+          "PKGS-7392",
+          "NETW-2600",
+          "HTTP-6708",
+          "CRYP-7902",
+          "KRNL-6000"
+        ],
+        "evaluation": {
+          "hardening_index_threshold": 60
+        }
+      }
+    },
+    "threats": {
+      "Intentional physical damage": [1252, 200],
+      "Unintentional damage/loss of information or IT assets": [250, 710, 199, 277, 16],
+      "Poisoning": [494, 502],
+      "Failures/malfunction": [385, 118],
+      "Interception and unauthorized acquisition": [294, 300, 284, 200],
+      "Nefarious activity/abuse": [522, 400, 94, 20, 77, 359, 287, 285],
+      "Organizational threats": [1242, 706, 399]
+    }
+  }
+}
