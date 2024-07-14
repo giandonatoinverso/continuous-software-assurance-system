@@ -7,7 +7,7 @@ from utils.helper import Helper
 class Gosec:
     gosec_output = dict()
     helper = Helper()
-    repository_path = "repository"
+    repository_path = os.getenv('REPOSITORY_PATH')
     target = os.getenv('GOSEC_TARGET')
     oauth_token = os.getenv('GOSEC_OAUTH_TOKEN')
     gosec_input_path = os.getenv('GOSEC_INPUT')
@@ -20,7 +20,9 @@ class Gosec:
         self.download_resources()
         self.gosec_execute()
         self.generate_output()
+        self.helper.remove_path(self.repository_path)
         return self.evaluate_output()
+
 
     def download_resources(self):
         self.helper.clone_repository(self.target, self.repository_path, self.oauth_token)
