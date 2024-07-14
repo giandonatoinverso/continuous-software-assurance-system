@@ -64,6 +64,22 @@ class LynisParser:
         print(json.dumps(json_file, indent=4))
         print("\n")
 
+    def save_json(self, json_file):
+        report = {
+            "Lynis": [self.system_data, self.boot_and_services, self.kernel, self.memory_and_processes, self.users_groups_and_authentication,
+                      self.shell, self.file_systems, self.usb_devices, self.storage, self.nfs, self.name_services, self.ports_and_packages, self.networking,
+                      self.printers_and_spools, self.email_and_messaging, self.firewall, self.webserver, self.ssh, self.snmp, self.databases, self.ldap,
+                      self.php,
+                      self.squid_support, self.logging_and_files, self.insecure_services, self.banners_and_identification,
+                      self.scheduled_task,
+                      self.accounting, self.time_and_synchronization, self.cryptography, self.virtualization, self.containers,
+                      self.security_frameworks,
+                      self.file_integrity, self.system_tooling, self.malware, self.file_permissions, self.home_directories, self.kernel_hardening,
+                      self.hardening, self.custom_tests, self.results_warnings, self.results_suggestions, self.scan_details]}
+
+        with open(json_file, 'w') as file:
+            json.dump(report, file, indent=4)
+
     def read_system_data(self):
         pattern = r"Program version:\s+(.*?)\n\s+Operating system:\s+(.*?)\n\s+Operating system name:\s+(.*?)\n\s+Operating system version:\s+(.*?)\n\s+Kernel version:\s+(.*?)\n\s+Hardware platform:\s+(.*?)\n\s+Hostname:\s+(.*?)\n"
 

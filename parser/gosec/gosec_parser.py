@@ -27,10 +27,7 @@ class GosecParser:
         print("\n")
 
     def cwe_targets_aggregation(self, json_file=None):
-        if json_file is None:
-            json_file = self.report
-
-        with open(json_file, "r") as file:
+        with open(self.report, "r") as file:
             data = json.load(file)
 
         new_data = {"Issues": []}

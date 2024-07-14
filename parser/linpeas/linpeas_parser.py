@@ -33,6 +33,16 @@ class LinpeasParser:
         print(json.dumps(json_file, indent=4))
         print("\n")
 
+    def save_json(self, json_file):
+        report = {
+            "Linpeas": [self.environment, self.socket_files, self.dbus_config_files, self.superusers, self.users_with_console,
+                      self.users_and_group, self.certificates, self.writable_ssh_pgp, self.writable_files, self.sh_files, self.unexpected_files, self.sgid, self.script_in_profiles,
+                      self.suid, self.service, self.capabilities, self.permissions, self.protections, self.sudo_version, self.linux_exploit_suggester, self.linux_exploit_suggester_2,
+                      self.active_ports, self.sudo_tokens]}
+
+        with open(json_file, 'w') as file:
+            json.dump(report, file, indent=4)
+
     def read_environment(self):
         self.environment = self._read_standard("Environment", "environment")
         return self

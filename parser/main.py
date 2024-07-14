@@ -11,22 +11,22 @@ gosec_input = os.getenv('GOSEC_INPUT')
 gosec_output = os.getenv('GOSEC_OUTPUT')
 gosec_html = os.getenv('GOSEC_HTML')
 linpeas_input = os.getenv('LINPEAS_INPUT')
+linpeas_output = os.getenv('LINPEAS_OUTPUT')
 lynis_input = os.getenv('LYNIS_INPUT')
+lynis_output = os.getenv('LYNIS_OUTPUT')
 
 ########################################################################
 
 print("Bandit:")
 bandit_parser = BanditParser(bandit_input)
-bandit_parser.print_json(bandit_parser.get_content())
-bandit_parser.print_json(bandit_parser.cwe_targets_aggregation())
+bandit_parser.print_json(bandit_parser.cwe_targets_aggregation(bandit_output))
 bandit_parser.json_to_html(bandit_output, bandit_html)
 
 ########################################################################
 
 print("Gosec:")
 gosec_parser = GosecParser(gosec_input)
-gosec_parser.print_json(gosec_parser.get_content())
-gosec_parser.print_json(gosec_parser.cwe_targets_aggregation())
+gosec_parser.print_json(gosec_parser.cwe_targets_aggregation(gosec_output))
 gosec_parser.json_to_html(gosec_output, gosec_html)
 
 ########################################################################
@@ -103,6 +103,8 @@ linpeas_parser.print_json(linpeas_parser.read_active_ports().get_active_ports())
 
 print("Checking sudo tokens")
 linpeas_parser.print_json(linpeas_parser.read_sudo_tokens().get_sudo_tokens())
+
+linpeas_parser.save_json(linpeas_output)
 
 ########################################################################
 
@@ -240,3 +242,5 @@ lynis_parser.print_json(lynis_parser.read_results_suggestions().get_results_sugg
 
 print("Scan details:")
 lynis_parser.print_json(lynis_parser.read_scan_details().get_scan_details())
+
+lynis_parser.save_json(lynis_output)
