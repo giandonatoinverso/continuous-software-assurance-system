@@ -23,7 +23,6 @@ class Gosec:
         self.helper.remove_path(self.repository_path)
         return self.evaluate_output()
 
-
     def download_resources(self):
         self.helper.clone_repository(self.target, self.repository_path, self.oauth_token)
 
