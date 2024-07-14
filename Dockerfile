@@ -7,8 +7,11 @@ ADD requirements.txt /usr/src/app
 
 COPY --from=docker.io/golang:1.22.2-alpine /usr/local/go/ /usr/local/go/
 ENV PATH="/usr/local/go/bin:${PATH}"
+ENV TRIVY_VERSION="0.49.1"
+ENV TRIVY_PLATFORM="Linux-ARM.deb"
+ENV TEMP_PATH="/usr/src/app/temp/"
 RUN wget -O - -q https://raw.githubusercontent.com/securego/gosec/master/install.sh | sh -s -- -b /usr/local/bin
-RUN wget -O- -q https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin v0.49.1
+RUN wget -O- -q https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin v$TRIVY_VERSION
 RUN wget -O- -q https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
 
 RUN pip install --no-cache-dir -r requirements.txt

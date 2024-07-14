@@ -22,7 +22,7 @@ class Bandit:
         self.download_resources()
         self.bandit_execute()
         self.generate_output()
-        self.helper.remove_path(self.repository_path)
+        self.helper.remove_path_contents(os.getenv('TEMP_PATH'))
         return self.evaluate_output()
 
     def download_resources(self):

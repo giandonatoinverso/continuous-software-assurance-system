@@ -1,6 +1,8 @@
 import subprocess
 import shutil
 import requests
+import os
+
 
 class Helper:
     def clone_repository(self, git_url, dest_path, access_token=None):
@@ -23,8 +25,13 @@ class Helper:
         except requests.exceptions.RequestException as e:
             print(f"Error during download: {e}")
 
-    def remove_path(self, file_path):
-        try:
-            shutil.rmtree(file_path)
-        except OSError as e:
-            print(f"Error removing folder {file_path}: {e}")
+    def remove_path_contents(self, dir_path):
+        for item in os.listdir(dir_path):
+            item_path = os.path.join(dir_path, item)
+            try:
+                if os.path.isdir(item_path):
+                    shutil.rmtree(item_path)
+                else:
+                    os.remove(item_path)
+            except OSError as e:
+                print(f"Error removing {item_path}: {e}")

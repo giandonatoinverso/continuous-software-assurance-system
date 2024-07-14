@@ -28,6 +28,7 @@
       "trivy_docker": {
         "credential_label": "mainflux_trivy_docker",
         "name": "Trivy Docker",
+        "target": "docker.io/",
         "compose_file": "https://github.com/MainfluxLabs/mainflux/blob/master/docker/docker-compose.yml",
         "env_file": "https://github.com/MainfluxLabs/mainflux/blob/master/docker/.env",
         "trivy_input": "data/raw/mainflux_docker.json",
