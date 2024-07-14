@@ -1,0 +1,118 @@
+{
+  "Mainflux": {
+    "label": "mainflux",
+    "security_controls": {
+      "gosec": {
+        "name": "Gosec",
+        "target": "https://github.com/MainfluxLabs/mainflux",
+        "path": "data/mainflux_gosec",
+        "evaluation": {
+          "severity": "MEDIUM",
+          "threshold": 2
+        }
+      },
+      "trivy_fs": {
+        "name": "Trivy Golang",
+        "target": "https://github.com/MainfluxLabs/mainflux",
+        "path": "data/mainflux_trivy",
+        "evaluation": {
+          "severity": "MEDIUM",
+          "threshold": 2
+        }
+      },
+      "trivy_docker": {
+        "name": "Trivy Docker",
+        "compose_file": "https://github.com/MainfluxLabs/mainflux/blob/master/docker/docker-compose.yml",
+        "env_file": "https://github.com/MainfluxLabs/mainflux/blob/master/docker/.env",
+        "path": "data/mainflux_docker",
+        "evaluation": {
+          "severity": "MEDIUM",
+          "threshold": 2
+        }
+      }
+    },
+    "threats": {
+      "Intentional physical damage": [1252, 200],
+      "Unintentional damage/loss of information or IT assets": [250, 710, 199, 277, 16],
+      "Poisoning": [494, 502],
+      "Failures/malfunction": [385, 118],
+      "Interception and unauthorized acquisition": [294, 300, 284, 200],
+      "Nefarious activity/abuse": [522, 400, 94, 20, 77, 359, 287, 285],
+      "Organizational threats": [1242, 706, 399]
+    }
+  },
+  "HomeAssistant": {
+    "label": "homeassistant",
+    "security_controls": {
+      "bandit": {
+        "name": "Bandit",
+        "target": "https://github.com/home-assistant/core",
+        "path": "data/homeassistant_bandit",
+        "evaluation": {
+          "severity": "MEDIUM",
+          "threshold": 2
+        }
+      },
+      "trivy_fs": {
+        "name": "Trivy Python",
+        "target": "https://github.com/home-assistant/core",
+        "path": "data/homeassistant_trivy",
+        "evaluation": {
+          "severity": "MEDIUM",
+          "threshold": 2
+        }
+      }
+    },
+    "threats": {
+      "Intentional physical damage": [1252, 200],
+      "Unintentional damage/loss of information or IT assets": [250, 710, 199, 277, 16],
+      "Poisoning": [494, 502],
+      "Failures/malfunction": [385, 118],
+      "Interception and unauthorized acquisition": [294, 300, 284, 200],
+      "Nefarious activity/abuse": [522, 400, 94, 20, 77, 359, 287, 285],
+      "Organizational threats": [1242, 706, 399]
+    }
+  },
+  "RaspberryPi": {
+    "label": "raspberrypi",
+    "security_controls": {
+      "trivy_remotefs": {
+        "name": "Trivy RaspberryPi",
+        "target": "172.20.28.55",
+        "port": "2225",
+        "path": "data/raspberry_trivy",
+        "evaluation": {
+          "severity": "MEDIUM",
+          "threshold": 2
+        }
+      },
+      "lynis": {
+        "name": "Lynis",
+        "target": "172.20.28.55",
+        "port": "2225",
+        "path": "data/raspberry_lynis",
+        "lynis_repository": "https://downloads.cisofy.com/lynis/lynis-3.1.1.tar.gz",
+        "test_skip": [
+          "PKGS-7345",
+          "PKGS-7392",
+          "NETW-2600",
+          "HTTP-6708",
+          "CRYP-7902",
+          "KRNL-6000"
+        ],
+        "evaluation": {
+          "hardening_index_threshold": 60
+        }
+      }
+    },
+    "threats": {
+      "Intentional physical damage": [1252, 200],
+      "Unintentional damage/loss of information or IT assets": [250, 710, 199, 277, 16],
+      "Poisoning": [494, 502],
+      "Failures/malfunction": [385, 118],
+      "Interception and unauthorized acquisition": [294, 300, 284, 200],
+      "Nefarious activity/abuse": [522, 400, 94, 20, 77, 359, 287, 285],
+      "Organizational threats": [1242, 706, 399]
+    }
+  }
+}
