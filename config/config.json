@@ -1,8 +1,8 @@
 {
   "Mainflux": {
-    "label": "mainflux",
     "security_controls": {
       "gosec": {
+        "credential_label": "mainflux",
         "name": "Gosec",
         "target": "https://github.com/MainfluxLabs/mainflux",
         "path": "data/mainflux_gosec",
@@ -12,6 +12,7 @@
         }
       },
       "trivy_fs": {
+        "credential_label": "mainflux",
         "name": "Trivy Golang",
         "target": "https://github.com/MainfluxLabs/mainflux",
         "path": "data/mainflux_trivy",
@@ -21,6 +22,7 @@
         }
       },
       "trivy_docker": {
+        "credential_label": "mainflux",
         "name": "Trivy Docker",
         "compose_file": "https://github.com/MainfluxLabs/mainflux/blob/master/docker/docker-compose.yml",
         "env_file": "https://github.com/MainfluxLabs/mainflux/blob/master/docker/.env",
@@ -42,7 +44,6 @@
     }
   },
   "HomeAssistant": {
-    "label": "homeassistant",
     "security_controls": {
       "bandit": {
         "name": "Bandit",
@@ -74,9 +75,9 @@
     }
   },
   "RaspberryPi": {
-    "label": "raspberrypi",
     "security_controls": {
       "trivy_remotefs": {
+        "credential_label": "raspberry",
         "name": "Trivy RaspberryPi",
         "target": "172.20.28.55",
         "port": "2225",
@@ -87,6 +88,7 @@
         }
       },
       "lynis": {
+        "credential_label": "raspberry",
         "name": "Lynis",
         "target": "172.20.28.55",
         "port": "2225",
