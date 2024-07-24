@@ -2,7 +2,7 @@
   "Mainflux": {
     "security_controls": {
       "gosec": {
-        "credential_label": "mainflux",
+        "credential": "mainflux",
         "name": "Gosec Mainflux",
         "target": "https://github.com/MainfluxLabs/mainflux",
         "raw_output": "mainflux_gosec.json",
@@ -14,10 +14,9 @@
         }
       },
       "trivy_fs": {
-        "credential_label": "mainflux",
+        "credential": "mainflux",
         "name": "Trivy Mainflux Golang",
         "target": "https://github.com/MainfluxLabs/mainflux",
-        "raw_output": "mainflux_trivy.json",
         "final_output": "mainflux_trivy.json",
         "report_output": "mainflux_trivy.html",
         "evaluation": {
@@ -26,12 +25,12 @@
         }
       },
       "trivy_docker": {
-        "credential_label": "mainflux_trivy_docker",
+        "credential": "mainflux_trivy_docker",
         "name": "Trivy Docker",
         "target": "docker.io/",
         "compose_file": "https://github.com/MainfluxLabs/mainflux/blob/master/docker/docker-compose.yml",
         "env_file": "https://github.com/MainfluxLabs/mainflux/blob/master/docker/.env",
-        "raw_output": "mainflux_docker.json",
+        "docker_host": "unix:///Users/giandonatoinverso/.docker/run/docker.sock",
         "final_output": "mainflux_docker.json",
         "report_output": "mainflux_docker.html",
         "evaluation": {
@@ -53,6 +52,7 @@
   "HomeAssistant": {
     "security_controls": {
       "bandit": {
+        "credential": "home_assistant",
         "name": "Bandit",
         "target": "https://github.com/home-assistant/core",
         "raw_output": "homeassistant_bandit.json",
@@ -64,9 +64,9 @@
         }
       },
       "trivy_fs": {
+        "credential": "home_assistant",
         "name": "Trivy Python",
         "target": "https://github.com/home-assistant/core",
-        "raw_output": "homeassistant_trivy.json",
         "final_output": "homeassistant_trivy.json",
         "report_output": "homeassistant_trivy.html",
         "evaluation": {
@@ -88,11 +88,10 @@
   "ExternalDevice": {
     "security_controls": {
       "trivy_remotefs": {
-        "credential_label": "external_device",
+        "credential": "external_device",
         "name": "Trivy ExternalDevice",
         "target": "ec2-3-98-121-184.ca-central-1.compute.amazonaws.com",
-        "port": "22",
-        "raw_output": "external_device_trivy.json",
+        "target_port": "22",
         "final_output": "external_device_trivy.json",
         "report_output": "external_device_trivy.html",
         "version": "0.49.1",
@@ -113,14 +112,12 @@
         }
       },
       "lynis": {
-        "credential_label": "external_device",
+        "credential": "external_device",
         "name": "Lynis ExternalDevice",
         "target": "ec2-3-98-121-184.ca-central-1.compute.amazonaws.com",
-        "port": "22",
-        "raw_output": "external_device_lynis.txt",
+        "target_port": "22",
         "final_output": "external_device_lynis.json",
-        "report_output": "external_device_lynis.html",
-        "package": "https://downloads.cisofy.com/lynis/lynis-3.1.1.tar.gz",
+        "version": "3.1.1",
         "skip_test": [
           "PKGS-7345",
           "PKGS-7392",

@@ -5,10 +5,11 @@ import os
 
 
 class Lynis:
-    def __init__(self, lynis_version, hardening_index_threshold, target, target_port, target_username, target_password=None, target_private_key=None, skip_test=None):
+    def __init__(self, lynis_version, hardening_index_threshold, output_path, target, target_port, target_username, target_password=None, target_private_key=None, skip_test=None):
         self.lynis_report = dict()
         self.lynis_version = lynis_version
         self.hardening_index_threshold = hardening_index_threshold
+        self.output_path = output_path
         self.target = target
         self.target_port = target_port
         self.target_username = target_username
@@ -65,8 +66,8 @@ class Lynis:
     def collect_lynis_output(self):
         ssh_client = self._get_ssh_client()
         ssh_client.connect_ssh()
-        ssh_client.get_file(os.getenv('REPORT_PATH')+"lynis_report.txt", "lynis_report.txt")
-        lynis_parser = LynisParser(os.getenv('REPORT_PATH')+"lynis_report.txt")
+        ssh_client.get_file(os.getenv('TEMP_PATH')+"lynis_report.txt", "lynis_report.txt")
+        lynis_parser = LynisParser(os.getenv('TEMP_PATH')+"lynis_report.txt")
         system_data = lynis_parser.read_system_data().get_system_data()
         boot_and_services = lynis_parser.read_boot_and_services().get_boot_and_services()
         kernel = lynis_parser.read_kernel().get_kernel()
@@ -122,6 +123,8 @@ class Lynis:
                       security_frameworks,
                       file_integrity, system_tooling, malware, file_permissions, home_directories, kernel_hardening,
                       hardening, custom_tests, results_warnings, results_suggestions, scan_details]}
+
+        lynis_parser.save_json(os.getenv('REPORT_PATH')+self.output_path)
 
     def evaluate_output(self):
         hardening_index = None

@@ -5,11 +5,10 @@ from utils.helper import Helper
 
 
 class Gosec:
-    def __init__(self, repository_path, input_path, output_path, html_path, evaluation_severity, evaluation_threshold,
+    def __init__(self, input_path, output_path, html_path, evaluation_severity, evaluation_threshold,
                  target, oauth_token=None):
         self.output = dict()
         self.helper = Helper()
-        self.repository_path = repository_path
         self.input_path = input_path
         self.output_path = output_path
         self.html_path = html_path
@@ -26,10 +25,10 @@ class Gosec:
         return self.evaluate_output()
 
     def download_resources(self):
-        self.helper.clone_repository(self.target, self.repository_path, self.oauth_token)
+        self.helper.clone_repository(self.target, os.getenv('TEMP_PATH')+"repository", self.oauth_token)
 
     def gosec_execute(self):
-        command = f"gosec -exclude-dir=test -fmt=json {self.repository_path}/... > {os.getenv('RAW_PATH')}{self.input_path}"
+        command = f"gosec -exclude-dir=test -fmt=json {os.getenv('TEMP_PATH')}repository/... > {os.getenv('RAW_PATH')}{self.input_path}"
         subprocess.Popen(command, shell=True).wait()
 
     def generate_output(self):

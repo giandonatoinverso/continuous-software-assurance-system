@@ -11,7 +11,8 @@ class Trivy:
     def __init__(self, mode, output_path, evaluation_severity, evaluation_threshold,
                  target=None, target_port=None, target_username=None, target_password=None, target_private_key=None,
                  oauth_token=None, target_name=None, compose_file_url=None, env_file_url=None,
-                 docker_username=None, docker_host=None, docker_password=None, remotefs_timeout=None, remotefs_skipdirs=None, remotefs_skipfiles=None):
+                 docker_username=None, docker_host=None, docker_password=None, remotefs_timeout=None, remotefs_skipdirs=None, remotefs_skipfiles=None,
+                 remotefs_version=None, remotefs_platform=None):
         supported_modes = {'docker', 'fs', 'remotefs'}
         if mode not in supported_modes:
             raise Exception(f"The parameter {mode} is invalid. Must belong to: {supported_modes}")
@@ -41,6 +42,8 @@ class Trivy:
         self.remotefs_timeout = remotefs_timeout
         self.remotefs_skipdirs = remotefs_skipdirs
         self.remotefs_skipfiles = remotefs_skipfiles
+        self.remotefs_version = remotefs_version
+        self.remotefs_platform = remotefs_platform
 
     def execute(self):
         self.download_resources()
@@ -62,9 +65,9 @@ class Trivy:
         elif self.mode == "remotefs":
             ssh_client = self._get_ssh_client()
             ssh_client.connect_ssh()
-            ssh_client.send_command(f"sudo wget https://github.com/aquasecurity/trivy/releases/download/v{os.getenv('TRIVY_VERSION')}/trivy_{os.getenv('TRIVY_VERSION')}_{os.getenv('TRIVY_PLATFORM')}",
+            ssh_client.send_command(f"sudo wget https://github.com/aquasecurity/trivy/releases/download/v{self.remotefs_version}/trivy_{self.remotefs_version}_{self.remotefs_platform}",
                                     SshClient.onNotZeroExitCodeAction.STOP)
-            ssh_client.send_command(f"sudo dpkg -i trivy_{os.getenv('TRIVY_VERSION')}_{os.getenv('TRIVY_PLATFORM')}",
+            ssh_client.send_command(f"sudo dpkg -i trivy_{self.remotefs_version}_{self.remotefs_platform}",
                                     SshClient.onNotZeroExitCodeAction.STOP)
             ssh_client.send_command(f"sudo rm -rf /tmp/*", SshClient.onNotZeroExitCodeAction.STOP)
 

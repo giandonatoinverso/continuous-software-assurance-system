@@ -7,8 +7,6 @@ ADD requirements.txt /usr/src/app
 
 COPY --from=docker.io/golang:1.22.2-alpine /usr/local/go/ /usr/local/go/
 ENV PATH="/usr/local/go/bin:${PATH}"
-ENV TRIVY_VERSION="0.49.1"
-ENV TRIVY_PLATFORM="Linux-ARM.deb"
 ENV TEMP_PATH="/usr/src/app/temp/"
 ENV RAW_PATH="/usr/src/app/data/raw/"
 ENV REPORT_PATH="/usr/src/app/data/report/"
