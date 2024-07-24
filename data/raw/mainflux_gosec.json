@@ -1,0 +1,907 @@
+{
+    "Issues": [
+        {
+            "severity": "HIGH",
+            "confidence": "MEDIUM",
+            "cwe": {
+                "id": "338",
+                "url": "https://cwe.mitre.org/data/definitions/338.html"
+            },
+            "rule_id": "G404",
+            "details": "Use of weak random number generator (math/rand or math/rand/v2 instead of crypto/rand)",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/pkg/ulid/ulid.go",
+            "code": "30: \treturn &ulidProvider{\n31: \t\tentropy: mathrand.New(source),\n32: \t}\n",
+            "line": "31",
+            "column": "12",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "295",
+                "url": "https://cwe.mitre.org/data/definitions/295.html"
+            },
+            "rule_id": "G402",
+            "details": "TLS InsecureSkipVerify may be true.",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/tools/mqtt-bench/client.go",
+            "code": "138: \t\tcfg := &tls.Config{\n139: \t\t\tInsecureSkipVerify: c.SkipTLSVer,\n140: \t\t}\n",
+            "line": "139",
+            "column": "24",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "295",
+                "url": "https://cwe.mitre.org/data/definitions/295.html"
+            },
+            "rule_id": "G402",
+            "details": "TLS InsecureSkipVerify may be true.",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/pkg/sdk/go/sdk.go",
+            "code": "423: \t\t\t\tTLSClientConfig: &tls.Config{\n424: \t\t\t\t\tInsecureSkipVerify: !conf.TLSVerification,\n425: \t\t\t\t},\n",
+            "line": "424",
+            "column": "26",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/webhooks/main.go",
+            "code": "70: \tenvDBUser            = \"MF_WEBHOOKS_DB_USER\"\n71: \tenvDBPass            = \"MF_WEBHOOKS_DB_PASS\"\n72: \tenvDB                = \"MF_WEBHOOKS_DB\"\n",
+            "line": "71",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/users/main.go",
+            "code": "109: \n110: \tenvTokenResetEndpoint = \"MF_TOKEN_RESET_ENDPOINT\"\n111: \n",
+            "line": "110",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/users/main.go",
+            "code": "104: \tenvEmailUsername    = \"MF_EMAIL_USERNAME\"\n105: \tenvEmailPassword    = \"MF_EMAIL_PASSWORD\"\n106: \tenvEmailFromAddress = \"MF_EMAIL_FROM_ADDRESS\"\n",
+            "line": "105",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/users/main.go",
+            "code": "99: \tenvAdminPassword = \"MF_USERS_ADMIN_PASSWORD\"\n100: \tenvPassRegex     = \"MF_USERS_PASS_REGEX\"\n101: \n",
+            "line": "100",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/users/main.go",
+            "code": "98: \tenvAdminEmail    = \"MF_USERS_ADMIN_EMAIL\"\n99: \tenvAdminPassword = \"MF_USERS_ADMIN_PASSWORD\"\n100: \tenvPassRegex     = \"MF_USERS_PASS_REGEX\"\n",
+            "line": "99",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/users/main.go",
+            "code": "86: \tenvDBUser        = \"MF_USERS_DB_USER\"\n87: \tenvDBPass        = \"MF_USERS_DB_PASS\"\n88: \tenvDB            = \"MF_USERS_DB\"\n",
+            "line": "87",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/timescale-writer/main.go",
+            "code": "50: \tenvDBUser        = \"MF_TIMESCALE_WRITER_DB_USER\"\n51: \tenvDBPass        = \"MF_TIMESCALE_WRITER_DB_PASS\"\n52: \tenvDB            = \"MF_TIMESCALE_WRITER_DB\"\n",
+            "line": "51",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/timescale-reader/main.go",
+            "code": "64: \tenvDBUser            = \"MF_TIMESCALE_READER_DB_USER\"\n65: \tenvDBPass            = \"MF_TIMESCALE_READER_DB_PASS\"\n66: \tenvDB                = \"MF_TIMESCALE_READER_DB\"\n",
+            "line": "65",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/things/main.go",
+            "code": "96: \tenvESURL            = \"MF_THINGS_ES_URL\"\n97: \tenvESPass           = \"MF_THINGS_ES_PASS\"\n98: \tenvESDB             = \"MF_THINGS_ES_DB\"\n",
+            "line": "97",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/things/main.go",
+            "code": "93: \tenvCacheURL         = \"MF_THINGS_CACHE_URL\"\n94: \tenvCachePass        = \"MF_THINGS_CACHE_PASS\"\n95: \tenvCacheDB          = \"MF_THINGS_CACHE_DB\"\n",
+            "line": "94",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/things/main.go",
+            "code": "84: \tenvDBUser           = \"MF_THINGS_DB_USER\"\n85: \tenvDBPass           = \"MF_THINGS_DB_PASS\"\n86: \tenvDB               = \"MF_THINGS_DB\"\n",
+            "line": "85",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/smtp-notifier/main.go",
+            "code": "63: \tenvEmailUsername    = \"MF_EMAIL_USERNAME\"\n64: \tenvEmailPassword    = \"MF_EMAIL_PASSWORD\"\n65: \tenvEmailFromAddress = \"MF_EMAIL_FROM_ADDRESS\"\n",
+            "line": "64",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/smpp-notifier/main.go",
+            "code": "62: \tenvUsername   = \"MF_SMPP_USERNAME\"\n63: \tenvPassword   = \"MF_SMPP_PASSWORD\"\n64: \tenvSystemType = \"MF_SMPP_SYSTEM_TYPE\"\n",
+            "line": "63",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/postgres-writer/main.go",
+            "code": "49: \tenvDBUser        = \"MF_POSTGRES_WRITER_DB_USER\"\n50: \tenvDBPass        = \"MF_POSTGRES_WRITER_DB_PASS\"\n51: \tenvDB            = \"MF_POSTGRES_WRITER_DB\"\n",
+            "line": "50",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/postgres-reader/main.go",
+            "code": "64: \tenvDBUser            = \"MF_POSTGRES_READER_DB_USER\"\n65: \tenvDBPass            = \"MF_POSTGRES_READER_DB_PASS\"\n66: \tenvDB                = \"MF_POSTGRES_READER_DB\"\n",
+            "line": "65",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/mqtt/main.go",
+            "code": "115: \tenvDBUser            = \"MF_MQTT_ADAPTER_DB_USER\"\n116: \tenvDBPass            = \"MF_MQTT_ADAPTER_DB_PASS\"\n117: \tenvDB                = \"MF_MQTT_ADAPTER_DB\"\n",
+            "line": "116",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/mqtt/main.go",
+            "code": "108: \tenvAuthCacheURL      = \"MF_AUTH_CACHE_URL\"\n109: \tenvAuthCachePass     = \"MF_AUTH_CACHE_PASS\"\n110: \tenvAuthCacheDB       = \"MF_AUTH_CACHE_DB\"\n",
+            "line": "109",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/mqtt/main.go",
+            "code": "105: \tenvESURL             = \"MF_MQTT_ADAPTER_ES_URL\"\n106: \tenvESPass            = \"MF_MQTT_ADAPTER_ES_PASS\"\n107: \tenvESDB              = \"MF_MQTT_ADAPTER_ES_DB\"\n",
+            "line": "106",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/influxdb-writer/main.go",
+            "code": "50: \tenvDBOrg     = \"MF_INFLUXDB_ORG\"\n51: \tenvDBToken   = \"MF_INFLUXDB_TOKEN\"\n52: )\n",
+            "line": "51",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/influxdb-writer/main.go",
+            "code": "47: \tenvDBUser    = \"MF_INFLUXDB_ADMIN_USER\"\n48: \tenvDBPass    = \"MF_INFLUXDB_ADMIN_PASSWORD\"\n49: \tenvDBBucket  = \"MF_INFLUXDB_BUCKET\"\n",
+            "line": "48",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/influxdb-reader/main.go",
+            "code": "64: \tenvDBOrg             = \"MF_INFLUXDB_ORG\"\n65: \tenvDBToken           = \"MF_INFLUXDB_TOKEN\"\n66: \tenvClientTLS         = \"MF_INFLUX_READER_CLIENT_TLS\"\n",
+            "line": "65",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/influxdb-reader/main.go",
+            "code": "61: \tenvDBUser            = \"MF_INFLUXDB_ADMIN_USER\"\n62: \tenvDBPass            = \"MF_INFLUXDB_ADMIN_PASSWORD\"\n63: \tenvDBBucket          = \"MF_INFLUXDB_BUCKET\"\n",
+            "line": "62",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/certs/main.go",
+            "code": "99: \tenvVaultRole       = \"MF_VAULT_CA_ROLE_NAME\"\n100: \tenvVaultToken      = \"MF_VAULT_TOKEN\"\n101: )\n",
+            "line": "100",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/certs/main.go",
+            "code": "76: \tenvDBUser          = \"MF_CERTS_DB_USER\"\n77: \tenvDBPass          = \"MF_CERTS_DB_PASS\"\n78: \tenvDB              = \"MF_CERTS_DB\"\n",
+            "line": "77",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/auth/main.go",
+            "code": "80: \tenvTimeout         = \"MF_AUTH_GRPC_TIMEOUT\"\n81: \tenvSecret          = \"MF_AUTH_SECRET\"\n82: \tenvServerCert      = \"MF_AUTH_SERVER_CERT\"\n",
+            "line": "81",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "798",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+            },
+            "rule_id": "G101",
+            "details": "Potential hardcoded credentials",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/auth/main.go",
+            "code": "71: \tenvDBUser          = \"MF_AUTH_DB_USER\"\n72: \tenvDBPass          = \"MF_AUTH_DB_PASS\"\n73: \tenvDB              = \"MF_AUTH_DB\"\n",
+            "line": "72",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "MEDIUM",
+            "confidence": "HIGH",
+            "cwe": {
+                "id": "22",
+                "url": "https://cwe.mitre.org/data/definitions/22.html"
+            },
+            "rule_id": "G304",
+            "details": "Potential file inclusion via variable",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cli/provision.go",
+            "code": "336: \n337: \tfile, err := os.OpenFile(path, os.O_RDONLY, os.ModePerm)\n338: \tif err != nil {\n",
+            "line": "337",
+            "column": "15",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "MEDIUM",
+            "confidence": "HIGH",
+            "cwe": {
+                "id": "22",
+                "url": "https://cwe.mitre.org/data/definitions/22.html"
+            },
+            "rule_id": "G304",
+            "details": "Potential file inclusion via variable",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cli/provision.go",
+            "code": "289: \n290: \tfile, err := os.OpenFile(path, os.O_RDONLY, os.ModePerm)\n291: \tif err != nil {\n",
+            "line": "290",
+            "column": "15",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "MEDIUM",
+            "confidence": "HIGH",
+            "cwe": {
+                "id": "22",
+                "url": "https://cwe.mitre.org/data/definitions/22.html"
+            },
+            "rule_id": "G304",
+            "details": "Potential file inclusion via variable",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cli/provision.go",
+            "code": "242: \n243: \tfile, err := os.OpenFile(path, os.O_RDONLY, os.ModePerm)\n244: \tif err != nil {\n",
+            "line": "243",
+            "column": "15",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "MEDIUM",
+            "confidence": "HIGH",
+            "cwe": {
+                "id": "22",
+                "url": "https://cwe.mitre.org/data/definitions/22.html"
+            },
+            "rule_id": "G304",
+            "details": "Potential file inclusion via variable",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cli/config.go",
+            "code": "21: func read(file string) (Config, error) {\n22: \tdata, err := ioutil.ReadFile(file)\n23: \tc := Config{}\n",
+            "line": "22",
+            "column": "15",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "MEDIUM",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "400",
+                "url": "https://cwe.mitre.org/data/definitions/400.html"
+            },
+            "rule_id": "G112",
+            "details": "Potential Slowloris Attack because ReadHeaderTimeout is not configured in the http.Server",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/pkg/servers/http.go",
+            "code": "21: \terrCh := make(chan error)\n22: \tserver := &http.Server{Addr: p, Handler: handler}\n23: \n",
+            "line": "22",
+            "column": "13",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "MEDIUM",
+            "confidence": "LOW",
+            "cwe": {
+                "id": "400",
+                "url": "https://cwe.mitre.org/data/definitions/400.html"
+            },
+            "rule_id": "G112",
+            "details": "Potential Slowloris Attack because ReadHeaderTimeout is not configured in the http.Server",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/ws/main.go",
+            "code": "211: \terrCh := make(chan error, 2)\n212: \tserver := &http.Server{Addr: p, Handler: api.MakeHandler(svc, l)}\n213: \tl.Info(fmt.Sprintf(\"WS adapter service started, exposed port %s\", cfg.port))\n",
+            "line": "212",
+            "column": "13",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "MEDIUM",
+            "confidence": "MEDIUM",
+            "cwe": {
+                "id": "118",
+                "url": "https://cwe.mitre.org/data/definitions/118.html"
+            },
+            "rule_id": "G601",
+            "details": "Implicit memory aliasing in for loop.",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/webhooks/service.go",
+            "code": "75: \tfor _, webhook := range webhooks {\n76: \t\twh, err := ws.createWebhook(ctx, &webhook, token)\n77: \t\tif err != nil {\n",
+            "line": "76",
+            "column": "36",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "MEDIUM",
+            "confidence": "MEDIUM",
+            "cwe": {
+                "id": "118",
+                "url": "https://cwe.mitre.org/data/definitions/118.html"
+            },
+            "rule_id": "G601",
+            "details": "Implicit memory aliasing in for loop.",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/tools/mqtt-bench/client.go",
+            "code": "66: \t\t\tm.Error = true\n67: \t\t\ttimes[i] = calcMsgRes(&m, res)\n68: \t\t}\n",
+            "line": "67",
+            "column": "26",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "MEDIUM",
+            "confidence": "MEDIUM",
+            "cwe": {
+                "id": "118",
+                "url": "https://cwe.mitre.org/data/definitions/118.html"
+            },
+            "rule_id": "G601",
+            "details": "Implicit memory aliasing in for loop.",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/things/service.go",
+            "code": "332: \tfor _, channel := range channels {\n333: \t\tch, err := ts.createChannel(ctx, &channel, res)\n334: \t\tif err != nil {\n",
+            "line": "333",
+            "column": "36",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "MEDIUM",
+            "confidence": "MEDIUM",
+            "cwe": {
+                "id": "118",
+                "url": "https://cwe.mitre.org/data/definitions/118.html"
+            },
+            "rule_id": "G601",
+            "details": "Implicit memory aliasing in for loop.",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/things/service.go",
+            "code": "170: \tfor _, thing := range things {\n171: \t\tth, err := ts.createThing(ctx, &thing, res)\n172: \n",
+            "line": "171",
+            "column": "34",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "MEDIUM",
+            "confidence": "HIGH",
+            "cwe": {
+                "id": "276",
+                "url": "https://cwe.mitre.org/data/definitions/276.html"
+            },
+            "rule_id": "G302",
+            "details": "Expect file permissions to be 0600 or less",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cli/provision.go",
+            "code": "336: \n337: \tfile, err := os.OpenFile(path, os.O_RDONLY, os.ModePerm)\n338: \tif err != nil {\n",
+            "line": "337",
+            "column": "15",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "MEDIUM",
+            "confidence": "HIGH",
+            "cwe": {
+                "id": "276",
+                "url": "https://cwe.mitre.org/data/definitions/276.html"
+            },
+            "rule_id": "G302",
+            "details": "Expect file permissions to be 0600 or less",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cli/provision.go",
+            "code": "289: \n290: \tfile, err := os.OpenFile(path, os.O_RDONLY, os.ModePerm)\n291: \tif err != nil {\n",
+            "line": "290",
+            "column": "15",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "MEDIUM",
+            "confidence": "HIGH",
+            "cwe": {
+                "id": "276",
+                "url": "https://cwe.mitre.org/data/definitions/276.html"
+            },
+            "rule_id": "G302",
+            "details": "Expect file permissions to be 0600 or less",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cli/provision.go",
+            "code": "242: \n243: \tfile, err := os.OpenFile(path, os.O_RDONLY, os.ModePerm)\n244: \tif err != nil {\n",
+            "line": "243",
+            "column": "15",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "LOW",
+            "confidence": "HIGH",
+            "cwe": {
+                "id": "703",
+                "url": "https://cwe.mitre.org/data/definitions/703.html"
+            },
+            "rule_id": "G104",
+            "details": "Errors unhandled.",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/tools/provision/provision.go",
+            "code": "212: \t\t\t}\n213: \t\t\tbuffKeyOut.Flush()\n214: \t\t\tkey = keyOut.String()\n",
+            "line": "213",
+            "column": "4",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "LOW",
+            "confidence": "HIGH",
+            "cwe": {
+                "id": "703",
+                "url": "https://cwe.mitre.org/data/definitions/703.html"
+            },
+            "rule_id": "G104",
+            "details": "Errors unhandled.",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/tools/provision/provision.go",
+            "code": "206: \t\t\t}\n207: \t\t\tbuffWriter.Flush()\n208: \t\t\tcert = bw.String()\n",
+            "line": "207",
+            "column": "4",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "LOW",
+            "confidence": "HIGH",
+            "cwe": {
+                "id": "703",
+                "url": "https://cwe.mitre.org/data/definitions/703.html"
+            },
+            "rule_id": "G104",
+            "details": "Errors unhandled.",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/tools/mqtt-bench/results.go",
+            "code": "159: \t\tvar out bytes.Buffer\n160: \t\tjson.Indent(&out, data, \"\", \"\\t\")\n161: \n",
+            "line": "160",
+            "column": "3",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "LOW",
+            "confidence": "HIGH",
+            "cwe": {
+                "id": "703",
+                "url": "https://cwe.mitre.org/data/definitions/703.html"
+            },
+            "rule_id": "G104",
+            "details": "Errors unhandled.",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/tools/mqtt-bench/client.go",
+            "code": "183: \t\t\tlog.Println(\"Closing testing connection...\")\n184: \t\t\tconn.Close()\n185: \t\t}\n",
+            "line": "184",
+            "column": "4",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "LOW",
+            "confidence": "HIGH",
+            "cwe": {
+                "id": "703",
+                "url": "https://cwe.mitre.org/data/definitions/703.html"
+            },
+            "rule_id": "G104",
+            "details": "Errors unhandled.",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/tools/mqtt-bench/bench.go",
+            "code": "112: \t\t\tb = make([]byte, sz)\n113: \t\t\trand.Read(b)\n114: \t\t\tm.Payload = b\n",
+            "line": "113",
+            "column": "4",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "LOW",
+            "confidence": "HIGH",
+            "cwe": {
+                "id": "703",
+                "url": "https://cwe.mitre.org/data/definitions/703.html"
+            },
+            "rule_id": "G104",
+            "details": "Errors unhandled.",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/readers/timescale/messages.go",
+            "code": "197: \t}\n198: \tjson.Unmarshal(meta, &query)\n199: \n",
+            "line": "198",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "LOW",
+            "confidence": "HIGH",
+            "cwe": {
+                "id": "703",
+                "url": "https://cwe.mitre.org/data/definitions/703.html"
+            },
+            "rule_id": "G104",
+            "details": "Errors unhandled.",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/readers/postgres/messages.go",
+            "code": "203: \t}\n204: \tjson.Unmarshal(meta, &query)\n205: \n",
+            "line": "204",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "LOW",
+            "confidence": "HIGH",
+            "cwe": {
+                "id": "703",
+                "url": "https://cwe.mitre.org/data/definitions/703.html"
+            },
+            "rule_id": "G104",
+            "details": "Errors unhandled.",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/readers/mongodb/messages.go",
+            "code": "141: \t}\n142: \tjson.Unmarshal(meta, &query)\n143: \n",
+            "line": "142",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "LOW",
+            "confidence": "HIGH",
+            "cwe": {
+                "id": "703",
+                "url": "https://cwe.mitre.org/data/definitions/703.html"
+            },
+            "rule_id": "G104",
+            "details": "Errors unhandled.",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/readers/mocks/messages.go",
+            "code": "60: \tmeta, _ := json.Marshal(rpm)\n61: \tjson.Unmarshal(meta, &query)\n62: \n",
+            "line": "61",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "LOW",
+            "confidence": "HIGH",
+            "cwe": {
+                "id": "703",
+                "url": "https://cwe.mitre.org/data/definitions/703.html"
+            },
+            "rule_id": "G104",
+            "details": "Errors unhandled.",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/readers/api/transport.go",
+            "code": "330: \n331: \t\tw.Write(ar.file)\n332: \t}\n",
+            "line": "331",
+            "column": "3",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "LOW",
+            "confidence": "HIGH",
+            "cwe": {
+                "id": "703",
+                "url": "https://cwe.mitre.org/data/definitions/703.html"
+            },
+            "rule_id": "G104",
+            "details": "Errors unhandled.",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/pkg/sdk/go/certs.go",
+            "code": "56: \tif res != nil {\n57: \t\tres.Body.Close()\n58: \t}\n",
+            "line": "57",
+            "column": "3",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "LOW",
+            "confidence": "HIGH",
+            "cwe": {
+                "id": "703",
+                "url": "https://cwe.mitre.org/data/definitions/703.html"
+            },
+            "rule_id": "G104",
+            "details": "Errors unhandled.",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/mqtt/handler.go",
+            "code": "220: \tfor _, s := range subs {\n221: \t\tif h.service.RemoveSubscription(context.Background(), s); err != nil {\n222: \t\t\th.logger.Error(LogErrFailedUnsubscribe + (ErrClientNotInitialized).Error())\n",
+            "line": "221",
+            "column": "6",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "LOW",
+            "confidence": "HIGH",
+            "cwe": {
+                "id": "703",
+                "url": "https://cwe.mitre.org/data/definitions/703.html"
+            },
+            "rule_id": "G104",
+            "details": "Errors unhandled.",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/certs/mocks/pki.go",
+            "code": "129: \t}\n130: \tbuffKeyOut.Flush()\n131: \tkey := keyOut.String()\n",
+            "line": "130",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        },
+        {
+            "severity": "LOW",
+            "confidence": "HIGH",
+            "cwe": {
+                "id": "703",
+                "url": "https://cwe.mitre.org/data/definitions/703.html"
+            },
+            "rule_id": "G104",
+            "details": "Errors unhandled.",
+            "file": "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/certs/mocks/pki.go",
+            "code": "119: \t}\n120: \tbuffWriter.Flush()\n121: \tcert := bw.String()\n",
+            "line": "120",
+            "column": "2",
+            "nosec": false,
+            "suppressions": null
+        }
+    ],
+    "Stats": {
+        "files": 339,
+        "lines": 52564,
+        "nosec": 0,
+        "found": 56
+    },
+    "GosecVersion": "2.20.0"
+}

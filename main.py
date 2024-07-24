@@ -4,6 +4,8 @@ from security_controls.bandit.bandit import Bandit
 from security_controls.trivy.trivy import Trivy
 from security_controls.lynis.lynis import Lynis
 import json
+from aggregation.cwe import Cwe
+from pprint import pprint
 
 
 def load_and_instantiate_controls():
@@ -13,10 +15,7 @@ def load_and_instantiate_controls():
     with open("config/credential.json", "r") as f:
         credentials = json.load(f)
 
-    security_controls_by_category = {}
-
     for category, data in config.items():
-        security_controls = {}
         for control_name, control_config in data["security_controls"].items():
             credential_label = control_config.get("credential")
             control_credentials = credentials.get(credential_label, {})
@@ -107,7 +106,11 @@ def load_and_instantiate_controls():
             else:
                 raise ValueError(f"Security control type not supported: {control_name}")
 
-    return security_controls_by_category
 
+def report_generation():
+    cwe_utils = Cwe()
+    cwe_utils.read_cwe_aggregation_config("config/config.json")
+    pprint(cwe_utils.get_cve_distribution_tool())
 
-controls = load_and_instantiate_controls()
+#load_and_instantiate_controls()
+report_generation()

@@ -1,0 +1,366 @@
+{
+    "Issues": [
+        {
+            "CWE": "338",
+            "Targets": {
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/pkg/ulid/ulid.go": [
+                    {
+                        "line": "31",
+                        "column": "12"
+                    }
+                ]
+            },
+            "severity": "HIGH",
+            "confidence": "MEDIUM",
+            "details": "Use of weak random number generator (math/rand or math/rand/v2 instead of crypto/rand)"
+        },
+        {
+            "CWE": "295",
+            "Targets": {
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/tools/mqtt-bench/client.go": [
+                    {
+                        "line": "139",
+                        "column": "24"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/pkg/sdk/go/sdk.go": [
+                    {
+                        "line": "424",
+                        "column": "26"
+                    }
+                ]
+            },
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "details": "TLS InsecureSkipVerify may be true."
+        },
+        {
+            "CWE": "798",
+            "Targets": {
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/webhooks/main.go": [
+                    {
+                        "line": "71",
+                        "column": "2"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/users/main.go": [
+                    {
+                        "line": "110",
+                        "column": "2"
+                    },
+                    {
+                        "line": "105",
+                        "column": "2"
+                    },
+                    {
+                        "line": "100",
+                        "column": "2"
+                    },
+                    {
+                        "line": "99",
+                        "column": "2"
+                    },
+                    {
+                        "line": "87",
+                        "column": "2"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/timescale-writer/main.go": [
+                    {
+                        "line": "51",
+                        "column": "2"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/timescale-reader/main.go": [
+                    {
+                        "line": "65",
+                        "column": "2"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/things/main.go": [
+                    {
+                        "line": "97",
+                        "column": "2"
+                    },
+                    {
+                        "line": "94",
+                        "column": "2"
+                    },
+                    {
+                        "line": "85",
+                        "column": "2"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/smtp-notifier/main.go": [
+                    {
+                        "line": "64",
+                        "column": "2"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/smpp-notifier/main.go": [
+                    {
+                        "line": "63",
+                        "column": "2"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/postgres-writer/main.go": [
+                    {
+                        "line": "50",
+                        "column": "2"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/postgres-reader/main.go": [
+                    {
+                        "line": "65",
+                        "column": "2"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/mqtt/main.go": [
+                    {
+                        "line": "116",
+                        "column": "2"
+                    },
+                    {
+                        "line": "109",
+                        "column": "2"
+                    },
+                    {
+                        "line": "106",
+                        "column": "2"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/influxdb-writer/main.go": [
+                    {
+                        "line": "51",
+                        "column": "2"
+                    },
+                    {
+                        "line": "48",
+                        "column": "2"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/influxdb-reader/main.go": [
+                    {
+                        "line": "65",
+                        "column": "2"
+                    },
+                    {
+                        "line": "62",
+                        "column": "2"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/certs/main.go": [
+                    {
+                        "line": "100",
+                        "column": "2"
+                    },
+                    {
+                        "line": "77",
+                        "column": "2"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/auth/main.go": [
+                    {
+                        "line": "81",
+                        "column": "2"
+                    },
+                    {
+                        "line": "72",
+                        "column": "2"
+                    }
+                ]
+            },
+            "severity": "HIGH",
+            "confidence": "LOW",
+            "details": "Potential hardcoded credentials"
+        },
+        {
+            "CWE": "22",
+            "Targets": {
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cli/provision.go": [
+                    {
+                        "line": "337",
+                        "column": "15"
+                    },
+                    {
+                        "line": "290",
+                        "column": "15"
+                    },
+                    {
+                        "line": "243",
+                        "column": "15"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cli/config.go": [
+                    {
+                        "line": "22",
+                        "column": "15"
+                    }
+                ]
+            },
+            "severity": "MEDIUM",
+            "confidence": "HIGH",
+            "details": "Potential file inclusion via variable"
+        },
+        {
+            "CWE": "400",
+            "Targets": {
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/pkg/servers/http.go": [
+                    {
+                        "line": "22",
+                        "column": "13"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/ws/main.go": [
+                    {
+                        "line": "212",
+                        "column": "13"
+                    }
+                ]
+            },
+            "severity": "MEDIUM",
+            "confidence": "LOW",
+            "details": "Potential Slowloris Attack because ReadHeaderTimeout is not configured in the http.Server"
+        },
+        {
+            "CWE": "118",
+            "Targets": {
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/webhooks/service.go": [
+                    {
+                        "line": "76",
+                        "column": "36"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/tools/mqtt-bench/client.go": [
+                    {
+                        "line": "67",
+                        "column": "26"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/things/service.go": [
+                    {
+                        "line": "333",
+                        "column": "36"
+                    },
+                    {
+                        "line": "171",
+                        "column": "34"
+                    }
+                ]
+            },
+            "severity": "MEDIUM",
+            "confidence": "MEDIUM",
+            "details": "Implicit memory aliasing in for loop."
+        },
+        {
+            "CWE": "276",
+            "Targets": {
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cli/provision.go": [
+                    {
+                        "line": "337",
+                        "column": "15"
+                    },
+                    {
+                        "line": "290",
+                        "column": "15"
+                    },
+                    {
+                        "line": "243",
+                        "column": "15"
+                    }
+                ]
+            },
+            "severity": "MEDIUM",
+            "confidence": "HIGH",
+            "details": "Expect file permissions to be 0600 or less"
+        },
+        {
+            "CWE": "703",
+            "Targets": {
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/tools/provision/provision.go": [
+                    {
+                        "line": "213",
+                        "column": "4"
+                    },
+                    {
+                        "line": "207",
+                        "column": "4"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/tools/mqtt-bench/results.go": [
+                    {
+                        "line": "160",
+                        "column": "3"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/tools/mqtt-bench/client.go": [
+                    {
+                        "line": "184",
+                        "column": "4"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/tools/mqtt-bench/bench.go": [
+                    {
+                        "line": "113",
+                        "column": "4"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/readers/timescale/messages.go": [
+                    {
+                        "line": "198",
+                        "column": "2"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/readers/postgres/messages.go": [
+                    {
+                        "line": "204",
+                        "column": "2"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/readers/mongodb/messages.go": [
+                    {
+                        "line": "142",
+                        "column": "2"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/readers/mocks/messages.go": [
+                    {
+                        "line": "61",
+                        "column": "2"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/readers/api/transport.go": [
+                    {
+                        "line": "331",
+                        "column": "3"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/pkg/sdk/go/certs.go": [
+                    {
+                        "line": "57",
+                        "column": "3"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/mqtt/handler.go": [
+                    {
+                        "line": "221",
+                        "column": "6"
+                    }
+                ],
+                "/Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/certs/mocks/pki.go": [
+                    {
+                        "line": "130",
+                        "column": "2"
+                    },
+                    {
+                        "line": "120",
+                        "column": "2"
+                    }
+                ]
+            },
+            "severity": "LOW",
+            "confidence": "HIGH",
+            "details": "Errors unhandled."
+        }
+    ]
+}

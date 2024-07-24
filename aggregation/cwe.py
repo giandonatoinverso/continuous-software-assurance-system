@@ -80,9 +80,12 @@ class Cwe:
         unique_cwes = set()
 
         for category, details in self.cwe_aggregation_config_content.items():
-            file_paths = details.get("file_path", {})
-            for label, file_path in file_paths.items():
-                file_data = self._read_json_file(file_path)
+            security_controls_dict = list(details.values())[0]
+
+            for control_name, control_config in security_controls_dict.items():
+                file_path = control_config.get("final_output")
+                file_data = self._read_json_file(os.getenv("REPORT_PATH")+file_path)
+
                 if not file_data:
                     continue
 
@@ -109,9 +112,12 @@ class Cwe:
         unique_cves = set()
 
         for category, details in self.cwe_aggregation_config_content.items():
-            file_paths = details.get("file_path", {})
-            for label, file_path in file_paths.items():
-                file_data = self._read_json_file(file_path)
+            security_controls_dict = list(details.values())[0]
+
+            for control_name, control_config in security_controls_dict.items():
+                file_path = control_config.get("final_output")
+                file_data = self._read_json_file(os.getenv("REPORT_PATH") + file_path)
+
                 if not file_data:
                     continue
 
@@ -142,9 +148,12 @@ class Cwe:
         cve_severity_mapping = {}
 
         for category, details in self.cwe_aggregation_config_content.items():
-            file_paths = details.get("file_path", {})
-            for label, file_path in file_paths.items():
-                file_data = self._read_json_file(file_path)
+            security_controls_dict = list(details.values())[0]
+
+            for control_name, control_config in security_controls_dict.items():
+                file_path = control_config.get("final_output")
+                file_data = self._read_json_file(os.getenv("REPORT_PATH") + file_path)
+
                 if not file_data:
                     continue
 
@@ -194,9 +203,13 @@ class Cwe:
         found_cwes_details = {}
 
         for category, details in self.cwe_aggregation_config_content.items():
-            file_paths = details.get("file_path", {})
-            for label, file_path in file_paths.items():
-                file_data = self._read_json_file(file_path)
+            security_controls_dict = list(details.values())[0]
+
+            for control_name, control_config in security_controls_dict.items():
+                file_path = control_config.get("final_output")
+                label = control_config.get("name")
+                file_data = self._read_json_file(os.getenv("REPORT_PATH") + file_path)
+
                 if not file_data:
                     continue
 
@@ -240,7 +253,10 @@ class Cwe:
                                 for existing_detail in found_cwes_details[cwe]["details"]:
                                     if existing_detail['cve'] == detail['cve']:
                                         existing_detail['tools'].append(label)
-                                        existing_detail['category'].append(category)
+                                        if not isinstance(existing_detail['category'], list):
+                                            existing_detail['category'] = [existing_detail['category']]
+                                        if category not in existing_detail['category']:
+                                            existing_detail['category'].append(category)
                 else:
                     for cve_id, cve_details in file_data.items():
                         if isinstance(cve_details, dict) and "Details" in cve_details:
@@ -278,7 +294,10 @@ class Cwe:
                                         for existing_detail in found_cwes_details[cwe_str]["details"]:
                                             if existing_detail['cve'] == detail['cve']:
                                                 existing_detail['tools'].append(label)
-                                                existing_detail['category'].append(category)
+                                                if not isinstance(existing_detail['category'], list):
+                                                    existing_detail['category'] = [existing_detail['category']]
+                                                if category not in existing_detail['category']:
+                                                    existing_detail['category'].append(category)
 
         for cwe in found_cwes_details:
             found_cwes_details[cwe]["categories"] = list(found_cwes_details[cwe]["categories"])
@@ -291,8 +310,15 @@ class Cwe:
         summary_data = {}
 
         for category, details in self.cwe_aggregation_config_content.items():
-            file_paths = details.get("file_path", {})
-            tool_labels = sorted(file_paths.keys())
+            security_controls_dict = list(details.values())[0]
+            tool_labels = sorted([control_config["name"] for control_config in security_controls_dict.values()])
+
+            for control_name, control_config in security_controls_dict.items():
+                file_path = control_config.get("final_output")
+                file_data = self._read_json_file(os.getenv("REPORT_PATH") + file_path)
+
+                if not file_data:
+                    continue
 
             category_summary = {}
             for threat, cwes in details.get("threats", {}).items():
@@ -508,10 +534,19 @@ class Cwe:
         category_label_severity_distribution = {}
 
         for category, details in self.cwe_aggregation_config_content.items():
-            file_paths = details.get("file_path", {})
-            if category not in category_label_severity_distribution:
-                category_label_severity_distribution[category] = {}
-            for label in file_paths.keys():
+            security_controls_dict = list(details.values())[0]
+
+            for control_name, control_config in security_controls_dict.items():
+                file_path = control_config.get("final_output")
+                label = control_config.get("name")
+                file_data = self._read_json_file(os.getenv("REPORT_PATH") + file_path)
+
+                if not file_data:
+                    continue
+
+                if category not in category_label_severity_distribution:
+                    category_label_severity_distribution[category] = {}
+
                 if label not in category_label_severity_distribution[category]:
                     category_label_severity_distribution[category][label] = {level: 0 for level in severity_levels}
 

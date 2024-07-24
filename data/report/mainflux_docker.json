@@ -1,0 +1,1589 @@
+{
+    "CVE-2021-36159": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "libfetch: an out of boundary read while libfetch uses strtol to parse the relevant numbers into address bytes leads to information leak or crash",
+            "Description": "libfetch before 2021-07-26, as used in apk-tools, xbps, and other products, mishandles numeric strings for the FTP and HTTP protocols. The FTP passive mode implementation allows an out-of-bounds read because strtol is used to parse the relevant numbers into address bytes. It does not check if the line ends prematurely. If it does, the for-loop condition checks for the '\\0' terminator one byte too late.",
+            "Severity": "CRITICAL",
+            "CWE": [
+                "CWE-125"
+            ],
+            "V2Score": 6.4,
+            "V3Score": 9.1
+        }
+    },
+    "CVE-2021-42378": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the getvar_i()",
+            "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the getvar_i function",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-416"
+            ],
+            "V2Score": 6.5,
+            "V3Score": 6.9
+        }
+    },
+    "CVE-2021-42379": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the next_input_file()",
+            "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the next_input_file function",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-416"
+            ],
+            "V2Score": 6.5,
+            "V3Score": 6.9
+        }
+    },
+    "CVE-2021-42380": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the clrvar()",
+            "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the clrvar function",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-416"
+            ],
+            "V2Score": 6.5,
+            "V3Score": 6.9
+        }
+    },
+    "CVE-2021-42381": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the hash_init()",
+            "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the hash_init function",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-416"
+            ],
+            "V2Score": 6.5,
+            "V3Score": 6.9
+        }
+    },
+    "CVE-2021-42382": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the getvar_s()",
+            "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the getvar_s function",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-416"
+            ],
+            "V2Score": 6.5,
+            "V3Score": 6.9
+        }
+    },
+    "CVE-2021-42383": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the evaluate()",
+            "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the evaluate function",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-416"
+            ],
+            "V2Score": 6.5,
+            "V3Score": 6.9
+        }
+    },
+    "CVE-2021-42384": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the handle_special()",
+            "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the handle_special function",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-416"
+            ],
+            "V2Score": 6.5,
+            "V3Score": 6.9
+        }
+    },
+    "CVE-2021-42385": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the evaluate()",
+            "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the evaluate function",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-416"
+            ],
+            "V2Score": 6.5,
+            "V3Score": 6.9
+        }
+    },
+    "CVE-2021-42386": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "busybox: use-after-free in awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the nvalloc()",
+            "Description": "A use-after-free in Busybox's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the nvalloc function",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-416"
+            ],
+            "V2Score": 6.5,
+            "V3Score": 6.9
+        }
+    },
+    "CVE-2022-28391": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "busybox: remote attackers may execute arbitrary code if netstat is used",
+            "Description": "BusyBox through 1.35.0 allows remote attackers to execute arbitrary code if netstat is used to print a DNS PTR record's value to a VT compatible terminal. Alternatively, the attacker could choose to change the terminal's colors.",
+            "Severity": "HIGH",
+            "CWE": "",
+            "V2Score": 6.8,
+            "V3Score": 7.7
+        }
+    },
+    "CVE-2022-30065": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "busybox: A use-after-free in Busybox's awk applet leads to denial of service",
+            "Description": "A use-after-free in Busybox 1.35-x's awk applet leads to denial of service and possibly code execution when processing a crafted awk pattern in the copyvar function.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-416"
+            ],
+            "V2Score": 6.8,
+            "V3Score": 7.0
+        }
+    },
+    "CVE-2021-42374": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "busybox: out-of-bounds read in unlzma applet leads to information leak and denial of service when crafted LZMA-compressed input is decompressed",
+            "Description": "An out-of-bounds heap read in Busybox's unlzma applet leads to information leak and denial of service when crafted LZMA-compressed input is decompressed. This can be triggered by any applet/format that",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-125"
+            ],
+            "V2Score": 3.3,
+            "V3Score": 5.5
+        }
+    },
+    "CVE-2021-42375": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "busybox: incorrect handling of a special element in ash applet leads to denial of service when processing a crafted shell command",
+            "Description": "An incorrect handling of a special element in Busybox's ash applet leads to denial of service when processing a crafted shell command, due to the shell mistaking specific characters for reserved characters. This may be used for DoS under rare conditions of filtered command input.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-159"
+            ],
+            "V2Score": 1.9,
+            "V3Score": 4.8
+        }
+    },
+    "CVE-2021-22945": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "curl: use-after-free and double-free in MQTT sending",
+            "Description": "When sending data to an MQTT server, libcurl <= 7.73.0 and 7.78.0 could in some circumstances erroneously keep a pointer to an already freed memory area and both use that again in a subsequent call to send data and also free it *again*.",
+            "Severity": "CRITICAL",
+            "CWE": [
+                "CWE-415"
+            ],
+            "V2Score": 5.8,
+            "V3Score": 9.1
+        }
+    },
+    "CVE-2022-32207": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "curl: Unpreserved file permissions",
+            "Description": "When curl < 7.84.0 saves cookies, alt-svc and hsts data to local files, it makes the operation atomic by finalizing the operation with a rename from a temporary name to the final target file name.In that rename operation, it might accidentally *widen* the permissions for the target file, leaving the updated file accessible to more users than intended.",
+            "Severity": "CRITICAL",
+            "CWE": [
+                "CWE-276",
+                "CWE-840"
+            ],
+            "V2Score": 7.5,
+            "V3Score": 9.8
+        }
+    },
+    "CVE-2021-22901": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "curl: Use-after-free in TLS session handling when using OpenSSL TLS backend",
+            "Description": "curl 7.75.0 through 7.76.1 suffers from a use-after-free vulnerability resulting in already freed memory being used when a TLS 1.3 session ticket arrives over a connection. A malicious server can use this in rare unfortunate circumstances to potentially reach remote code execution in the client. When libcurl at run-time sets up support for TLS 1.3 session tickets on a connection using OpenSSL, it stores pointers to the transfer in-memory object for later retrieval when a session ticket arrives. If the connection is used by multiple transfers (like with a reused HTTP/1.1 connection or multiplexed HTTP/2 connection) that first transfer object might be freed before the new session is established on that connection and then the function will access a memory buffer that might be freed. When using that memory, libcurl might even call a function pointer in the object, making it possible for a remote code execution if the server could somehow manage to get crafted memory content into the correct place in memory.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-416"
+            ],
+            "V2Score": 6.8,
+            "V3Score": 8.1
+        }
+    },
+    "CVE-2021-22946": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "curl: Requirement to use TLS not properly enforced for IMAP, POP3, and FTP protocols",
+            "Description": "A user can tell curl >= 7.20.0 and <= 7.78.0 to require a successful upgrade to TLS when speaking to an IMAP, POP3 or FTP server (`--ssl-reqd` on the command line or`CURLOPT_USE_SSL` set to `CURLUSESSL_CONTROL` or `CURLUSESSL_ALL` withlibcurl). This requirement could be bypassed if the server would return a properly crafted but perfectly legitimate response.This flaw would then make curl silently continue its operations **withoutTLS** contrary to the instructions and expectations, exposing possibly sensitive data in clear text over the network.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-319",
+                "CWE-325"
+            ],
+            "V2Score": 5.0,
+            "V3Score": 7.5
+        }
+    },
+    "CVE-2022-22576": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "curl: OAUTH2 bearer bypass in connection re-use",
+            "Description": "An improper authentication vulnerability exists in curl 7.33.0 to and including 7.82.0 which might allow reuse OAUTH2-authenticated connections without properly making sure that the connection was authenticated with the same credentials as set for this transfer. This affects SASL-enabled protocols: SMPTP(S), IMAP(S), POP3(S) and LDAP(S) (openldap only).",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-306",
+                "CWE-287"
+            ],
+            "V2Score": 5.5,
+            "V3Score": 8.1
+        }
+    },
+    "CVE-2022-27775": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "curl: bad local IPv6 connection reuse",
+            "Description": "An information disclosure vulnerability exists in curl 7.65.0 to 7.82.0 are vulnerable that by using an IPv6 address that was in the connection pool but with a different zone id it could reuse a connection instead.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-200"
+            ],
+            "V2Score": 5.0,
+            "V3Score": 7.5
+        }
+    },
+    "CVE-2022-27781": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "curl: CERTINFO never-ending busy-loop",
+            "Description": "libcurl provides the `CURLOPT_CERTINFO` option to allow applications torequest details to be returned about a server's certificate chain.Due to an erroneous function, a malicious server could make libcurl built withNSS get stuck in a never-ending busy-loop when trying to retrieve thatinformation.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-835",
+                "CWE-400"
+            ],
+            "V2Score": 5.0,
+            "V3Score": 7.5
+        }
+    },
+    "CVE-2022-27782": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "curl: TLS and SSH connection too eager reuse",
+            "Description": "libcurl would reuse a previously created connection even when a TLS or SSHrelated option had been changed that should have prohibited reuse.libcurl keeps previously used connections in a connection pool for subsequenttransfers to reuse if one of them matches the setup. However, several TLS andSSH settings were left out from the configuration match checks, making themmatch too easily.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-295",
+                "CWE-840"
+            ],
+            "V2Score": 5.0,
+            "V3Score": 7.5
+        }
+    },
+    "CVE-2021-22922": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "curl: Content not matching hash in Metalink is not being discarded",
+            "Description": "When curl is instructed to download content using the metalink feature, thecontents is verified against a hash provided in the metalink XML file.The metalink XML file points out to the client how to get the same contentfrom a set of different URLs, potentially hosted by different servers and theclient can then download the file from one or several of them. In a serial orparallel manner.If one of the servers hosting the contents has been breached and the contentsof the specific file on that server is replaced with a modified payload, curlshould detect this when the hash of the file mismatches after a completeddownload. It should remove the contents and instead try getting the contentsfrom another URL. This is not done, and instead such a hash mismatch is onlymentioned in text and the potentially malicious content is kept in the file ondisk.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-755",
+                "CWE-840"
+            ],
+            "V2Score": 4.3,
+            "V3Score": 6.5
+        }
+    },
+    "CVE-2021-22923": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "curl: Metalink download sends credentials",
+            "Description": "When curl is instructed to get content using the metalink feature, and a user name and password are used to download the metalink XML file, those same credentials are then subsequently passed on to each of the servers from which curl will download or try to download the contents from. Often contrary to the user's expectations and intentions and without telling the user it happened.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-319",
+                "CWE-522"
+            ],
+            "V2Score": 2.6,
+            "V3Score": 5.5
+        }
+    },
+    "CVE-2021-22925": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "curl: Incorrect fix for CVE-2021-22898 TELNET stack contents disclosure",
+            "Description": "curl supports the `-t` command line option, known as `CURLOPT_TELNETOPTIONS`in libcurl. This rarely used option is used to send variable=content pairs toTELNET servers.Due to flaw in the option parser for sending `NEW_ENV` variables, libcurlcould be made to pass on uninitialized data from a stack based buffer to theserver. Therefore potentially revealing sensitive internal information to theserver using a clear-text network protocol.This could happen because curl did not call and use sscanf() correctly whenparsing the string provided by the application.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-908",
+                "CWE-200"
+            ],
+            "V2Score": 5.0,
+            "V3Score": 4.2
+        }
+    },
+    "CVE-2021-22947": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "curl: Server responses received before STARTTLS processed after TLS handshake",
+            "Description": "When curl >= 7.20.0 and <= 7.78.0 connects to an IMAP or POP3 server to retrieve data using STARTTLS to upgrade to TLS security, the server can respond and send back multiple responses at once that curl caches. curl would then upgrade to TLS but not flush the in-queue of cached responses but instead continue using and trustingthe responses it got *before* the TLS handshake as if they were authenticated.Using this flaw, it allows a Man-In-The-Middle attacker to first inject the fake responses, then pass-through the TLS traffic from the legitimate server and trick curl into sending data back to the user thinking the attacker's injected data comes from the TLS-protected server.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-345",
+                "CWE-310"
+            ],
+            "V2Score": 4.3,
+            "V3Score": 6.0
+        }
+    },
+    "CVE-2022-27774": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "curl: credential leak on redirect",
+            "Description": "An insufficiently protected credentials vulnerability exists in curl 4.9 to and include curl 7.82.0 are affected that could allow an attacker to extract credentials when follows HTTP(S) redirects is used with authentication could leak credentials to other services that exist on different protocols or port numbers.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-522"
+            ],
+            "V2Score": 3.5,
+            "V3Score": 5.3
+        }
+    },
+    "CVE-2022-27776": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "curl: auth/cookie leak on redirect",
+            "Description": "A insufficiently protected credentials vulnerability in fixed in curl 7.83.0 might leak authentication or cookie header data on HTTP redirects to the same host but another port number.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-522"
+            ],
+            "V2Score": 4.3,
+            "V3Score": 5.4
+        }
+    },
+    "CVE-2022-32205": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "curl: Set-Cookie denial of service",
+            "Description": "A malicious server can serve excessive amounts of `Set-Cookie:` headers in a HTTP response to curl and curl < 7.84.0 stores all of them. A sufficiently large amount of (big) cookies make subsequent HTTP requests to this, or other servers to which the cookies match, create requests that become larger than the threshold that curl uses internally to avoid sending crazy large requests (1048576 bytes) and instead returns an error.This denial state might remain for as long as the same cookies are kept, match and haven't expired. Due to cookie matching rules, a server on `foo.example.com` can set cookies that also would match for `bar.example.com`, making it it possible for a \"sister server\" to effectively cause a denial of service for a sibling site on the same second level domain using this method.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-770"
+            ],
+            "V2Score": 4.3,
+            "V3Score": 5.1
+        }
+    },
+    "CVE-2022-32206": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "curl: HTTP compression denial of service",
+            "Description": "curl < 7.84.0 supports \"chained\" HTTP compression algorithms, meaning that a serverresponse can be compressed multiple times and potentially with different algorithms. The number of acceptable \"links\" in this \"decompression chain\" was unbounded, allowing a malicious server to insert a virtually unlimited number of compression steps.The use of such a decompression chain could result in a \"malloc bomb\", makingcurl end up spending enormous amounts of allocated heap memory, or trying toand returning out of memory errors.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-770"
+            ],
+            "V2Score": 4.3,
+            "V3Score": 6.5
+        }
+    },
+    "CVE-2022-32208": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "curl: FTP-KRB bad message verification",
+            "Description": "When curl < 7.84.0 does FTP transfers secured by krb5, it handles message verification failures wrongly. This flaw makes it possible for a Man-In-The-Middle attack to go unnoticed and even allows it to inject data to the client.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-787",
+                "CWE-840"
+            ],
+            "V2Score": 4.3,
+            "V3Score": 5.6
+        }
+    },
+    "CVE-2022-27404": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "FreeType: Buffer overflow in sfnt_init_face",
+            "Description": "FreeType commit 1e2eb65048f75c64b68708efed6ce904c31f3b2f was discovered to contain a heap buffer overflow via the function sfnt_init_face.",
+            "Severity": "CRITICAL",
+            "CWE": [
+                "CWE-787"
+            ],
+            "V2Score": 7.5,
+            "V3Score": 8.7
+        }
+    },
+    "CVE-2022-27405": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "FreeType: Segmentation violation via FNT_Size_Request",
+            "Description": "FreeType commit 53dfdcd8198d2b3201a23c4bad9190519ba918db was discovered to contain a segmentation violation via the function FNT_Size_Request.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-125"
+            ],
+            "V2Score": 5.0,
+            "V3Score": 7.3
+        }
+    },
+    "CVE-2022-27406": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "Freetype: Segmentation violation via FT_Request_Size",
+            "Description": "FreeType commit 22a0cccb4d9d002f33c1ba7a4b36812c7d4f46b5 was discovered to contain a segmentation violation via the function FT_Request_Size.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-125"
+            ],
+            "V2Score": 5.0,
+            "V3Score": 7.3
+        }
+    },
+    "CVE-2021-3711": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "openssl: SM2 Decryption Buffer Overflow",
+            "Description": "In order to decrypt SM2 encrypted data an application is expected to call the API function EVP_PKEY_decrypt(). Typically an application will call this function twice. The first time, on entry, the \"out\" parameter can be NULL and, on exit, the \"outlen\" parameter is populated with the buffer size required to hold the decrypted plaintext. The application can then allocate a sufficiently sized buffer and call EVP_PKEY_decrypt() again, but this time passing a non-NULL value for the \"out\" parameter. A bug in the implementation of the SM2 decryption code means that the calculation of the buffer size required to hold the plaintext returned by the first call to EVP_PKEY_decrypt() can be smaller than the actual size required by the second call. This can lead to a buffer overflow when EVP_PKEY_decrypt() is called by the application a second time with a buffer that is too small. A malicious attacker who is able present SM2 content for decryption to an application could cause attacker chosen data to overflow the buffer by up to a maximum of 62 bytes altering the contents of other data held after the buffer, possibly changing application behaviour or causing the application to crash. The location of the buffer is application dependent but is typically heap allocated. Fixed in OpenSSL 1.1.1l (Affected 1.1.1-1.1.1k).",
+            "Severity": "CRITICAL",
+            "CWE": [
+                "CWE-120"
+            ],
+            "V2Score": 7.5,
+            "V3Score": 9.8
+        }
+    },
+    "CVE-2021-3712": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "openssl: Read buffer overruns processing ASN.1 strings",
+            "Description": "ASN.1 strings are represented internally within OpenSSL as an ASN1_STRING structure which contains a buffer holding the string data and a field holding the buffer length. This contrasts with normal C strings which are repesented as a buffer for the string data which is terminated with a NUL (0) byte. Although not a strict requirement, ASN.1 strings that are parsed using OpenSSL's own \"d2i\" functions (and other similar parsing functions) as well as any string whose value has been set with the ASN1_STRING_set() function will additionally NUL terminate the byte array in the ASN1_STRING structure. However, it is possible for applications to directly construct valid ASN1_STRING structures which do not NUL terminate the byte array by directly setting the \"data\" and \"length\" fields in the ASN1_STRING array. This can also happen by using the ASN1_STRING_set0() function. Numerous OpenSSL functions that print ASN.1 data have been found to assume that the ASN1_STRING byte array will be NUL terminated, even though this is not guaranteed for strings that have been directly constructed. Where an application requests an ASN.1 structure to be printed, and where that ASN.1 structure contains ASN1_STRINGs that have been directly constructed by the application without NUL terminating the \"data\" field, then a read buffer overrun can occur. The same thing can also occur during name constraints processing of certificates (for example if a certificate has been directly constructed by the application instead of loading it via the OpenSSL parsing functions, and the certificate contains non NUL terminated ASN1_STRING structures). It can also occur in the X509_get1_email(), X509_REQ_get1_email() and X509_get1_ocsp() functions. If a malicious actor can cause an application to directly construct an ASN1_STRING and then process it through one of the affected OpenSSL functions then this issue could be hit. This might result in a crash (causing a Denial of Service attack). It could also result in the disclosure of private memory contents (such as private keys, or sensitive plaintext). Fixed in OpenSSL 1.1.1l (Affected 1.1.1-1.1.1k). Fixed in OpenSSL 1.0.2za (Affected 1.0.2-1.0.2y).",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-125"
+            ],
+            "V2Score": 5.8,
+            "V3Score": 7.4
+        }
+    },
+    "CVE-2022-0778": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "openssl: Infinite loop in BN_mod_sqrt() reachable when parsing certificates",
+            "Description": "The BN_mod_sqrt() function, which computes a modular square root, contains a bug that can cause it to loop forever for non-prime moduli. Internally this function is used when parsing certificates that contain elliptic curve public keys in compressed form or explicit elliptic curve parameters with a base point encoded in compressed form. It is possible to trigger the infinite loop by crafting a certificate that has invalid explicit curve parameters. Since certificate parsing happens prior to verification of the certificate signature, any process that parses an externally supplied certificate may thus be subject to a denial of service attack. The infinite loop can also be reached when parsing crafted private keys as they can contain explicit elliptic curve parameters. Thus vulnerable situations include: - TLS clients consuming server certificates - TLS servers consuming client certificates - Hosting providers taking certificates or private keys from customers - Certificate authorities parsing certification requests from subscribers - Anything else which parses ASN.1 elliptic curve parameters Also any other applications that use the BN_mod_sqrt() where the attacker can control the parameter values are vulnerable to this DoS issue. In the OpenSSL 1.0.2 version the public key is not parsed during initial parsing of the certificate which makes it slightly harder to trigger the infinite loop. However any operation which requires the public key from the certificate will trigger the infinite loop. In particular the attacker can use a self-signed certificate to trigger the loop during verification of the certificate signature. This issue affects OpenSSL versions 1.0.2, 1.1.1 and 3.0. It was addressed in the releases of 1.1.1n and 3.0.2 on the 15th March 2022. Fixed in OpenSSL 3.0.2 (Affected 3.0.0,3.0.1). Fixed in OpenSSL 1.1.1n (Affected 1.1.1-1.1.1m). Fixed in OpenSSL 1.0.2zd (Affected 1.0.2-1.0.2zc).",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-835"
+            ],
+            "V2Score": 5.0,
+            "V3Score": 7.5
+        }
+    },
+    "CVE-2022-2097": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "openssl: AES OCB fails to encrypt some bytes",
+            "Description": "AES OCB mode for 32-bit x86 platforms using the AES-NI assembly optimised implementation will not encrypt the entirety of the data under some circumstances. This could reveal sixteen bytes of data that was preexisting in the memory that wasn't written. In the special case of \"in place\" encryption, sixteen bytes of the plaintext would be revealed. Since OpenSSL does not support OCB based cipher suites for TLS and DTLS, they are both unaffected. Fixed in OpenSSL 3.0.5 (Affected 3.0.0-3.0.4). Fixed in OpenSSL 1.1.1q (Affected 1.1.1-1.1.1p).",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-327"
+            ],
+            "V2Score": 5.0,
+            "V3Score": 6.0
+        }
+    },
+    "CVE-2021-33560": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "libgcrypt: mishandles ElGamal encryption because it lacks exponent blinding to address a side-channel attack against mpi_powm",
+            "Description": "Libgcrypt before 1.8.8 and 1.9.x before 1.9.3 mishandles ElGamal encryption because it lacks exponent blinding to address a side-channel attack against mpi_powm, and the window size is not chosen appropriately. This, for example, affects use of ElGamal in OpenPGP.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-203"
+            ],
+            "V2Score": 5.0,
+            "V3Score": 7.5
+        }
+    },
+    "CVE-2021-40528": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "libgcrypt: ElGamal implementation allows plaintext recovery",
+            "Description": "The ElGamal implementation in Libgcrypt before 1.9.4 allows plaintext recovery because, during interaction between two cryptographic libraries, a certain dangerous combination of the prime defined by the receiver's public key, the generator defined by the receiver's public key, and the sender's ephemeral exponents can lead to a cross-configuration attack against OpenPGP.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-327"
+            ],
+            "V2Score": 2.6,
+            "V3Score": 5.9
+        }
+    },
+    "CVE-2021-20205": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "libjpeg-turbo: DoS via open crafted GIF",
+            "Description": "Libjpeg-turbo versions 2.0.91 and 2.0.90 is vulnerable to a denial of service vulnerability caused by a divide by zero when processing a crafted GIF image.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-369"
+            ],
+            "V2Score": 4.3,
+            "V3Score": 6.5
+        }
+    },
+    "CVE-2021-3517": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "libxml2: Heap-based buffer overflow in xmlEncodeEntitiesInternal() in entities.c",
+            "Description": "There is a flaw in the xml entity encoding functionality of libxml2 in versions before 2.9.11. An attacker who is able to supply a crafted file to be processed by an application linked with the affected functionality of libxml2 could trigger an out-of-bounds read. The most likely impact of this flaw is to application availability, with some potential impact to confidentiality and integrity if an attacker is able to use memory information to further exploit the application.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-787"
+            ],
+            "V2Score": 7.5,
+            "V3Score": 8.6
+        }
+    },
+    "CVE-2021-3518": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "libxml2: Use-after-free in xmlXIncludeDoProcess() in xinclude.c",
+            "Description": "There's a flaw in libxml2 in versions before 2.9.11. An attacker who is able to submit a crafted file to be processed by an application linked with libxml2 could trigger a use-after-free. The greatest impact from this flaw is to confidentiality, integrity, and availability.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-416"
+            ],
+            "V2Score": 6.8,
+            "V3Score": 8.7
+        }
+    },
+    "CVE-2022-2309": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "lxml: NULL Pointer Dereference in lxml",
+            "Description": "NULL Pointer Dereference allows attackers to cause a denial of service (or application crash). This only applies when lxml is used together with libxml2 2.9.10 through 2.9.14. libxml2 2.9.9 and earlier are not affected. It allows triggering crashes through forged input data, given a vulnerable code sequence in the application. The vulnerability is caused by the iterwalk function (also used by the canonicalize function). Such code shouldn't be in wide-spread use, given that parsing + iterwalk would usually be replaced with the more efficient iterparse function. However, an XML converter that serialises to C14N would also be vulnerable, for example, and there are legitimate use cases for this code sequence. If untrusted input is received (also remotely) and processed via iterwalk function, a crash can be triggered.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-476"
+            ],
+            "V2Score": 5.0,
+            "V3Score": 6.8
+        }
+    },
+    "CVE-2022-23308": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "libxml2: Use-after-free of ID and IDREF attributes",
+            "Description": "valid.c in libxml2 before 2.9.13 has a use-after-free of ID and IDREF attributes.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-416"
+            ],
+            "V2Score": 4.3,
+            "V3Score": 7.8
+        }
+    },
+    "CVE-2022-40303": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "libxml2: integer overflows with XML_PARSE_HUGE",
+            "Description": "An issue was discovered in libxml2 before 2.10.3. When parsing a multi-gigabyte XML document with the XML_PARSE_HUGE parser option enabled, several integer counters can overflow. This results in an attempt to access an array at a negative 2GB offset, typically leading to a segmentation fault.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-190"
+            ],
+            "V2Score": "",
+            "V3Score": 7.5
+        }
+    },
+    "CVE-2022-40304": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "libxml2: dict corruption caused by entity reference cycles",
+            "Description": "An issue was discovered in libxml2 before 2.10.3. Certain invalid XML entity definitions can corrupt a hash table key, potentially leading to subsequent logic errors. In one case, a double-free can be provoked.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-415"
+            ],
+            "V2Score": "",
+            "V3Score": 7.8
+        }
+    },
+    "CVE-2021-3537": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "libxml2: NULL pointer dereference when post-validating mixed content parsed in recovery mode",
+            "Description": "A vulnerability found in libxml2 in versions before 2.9.11 shows that it did not propagate errors while parsing XML mixed content, causing a NULL dereference. If an untrusted XML document was parsed in recovery mode and post-validated, the flaw could be used to crash the application. The highest threat from this vulnerability is to system availability.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-476"
+            ],
+            "V2Score": 4.3,
+            "V3Score": 6.4
+        }
+    },
+    "CVE-2021-3541": {
+        "Targets": [
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "libxml2: Exponential entity expansion attack bypasses all existing protection mechanisms",
+            "Description": "A flaw was found in libxml2. Exponential entity expansion attack its possible bypassing all existing protection mechanisms and leading to denial of service.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-776"
+            ],
+            "V2Score": 4.0,
+            "V3Score": 6.5
+        }
+    },
+    "CVE-2022-29824": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "libxml2: integer overflows in xmlBuf and xmlBuffer lead to out-of-bounds write",
+            "Description": "In libxml2 before 2.9.14, several buffer handling functions in buf.c (xmlBuf*) and tree.c (xmlBuffer*) don't check for integer overflows. This can result in out-of-bounds memory writes. Exploitation requires a victim to open a crafted, multi-gigabyte XML file. Other software using libxml2's buffer functions, for example libxslt through 1.1.35, is affected as well.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-190"
+            ],
+            "V2Score": 4.3,
+            "V3Score": 7.0
+        }
+    },
+    "CVE-2021-30560": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "Use after free in Blink XSLT in Google Chrome prior to 91.0.4472.164 a ...",
+            "Description": "Use after free in Blink XSLT in Google Chrome prior to 91.0.4472.164 allowed a remote attacker to potentially exploit heap corruption via a crafted HTML page.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-416"
+            ],
+            "V2Score": 6.8,
+            "V3Score": 8.8
+        }
+    },
+    "CVE-2022-29458": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "ncurses: segfaulting OOB read",
+            "Description": "ncurses 6.3 before patch 20220416 has an out-of-bounds read and segmentation violation in convert_strings in tinfo/read_entry.c in the terminfo library.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-125"
+            ],
+            "V2Score": 5.8,
+            "V3Score": 6.6
+        }
+    },
+    "CVE-2022-1271": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "gzip: arbitrary-file-write vulnerability",
+            "Description": "An arbitrary file write vulnerability was found in GNU gzip's zgrep utility. When zgrep is applied on the attacker's chosen file name (for example, a crafted file name), this can overwrite an attacker's content to an arbitrary attacker-selected file. This flaw occurs due to insufficient validation when processing filenames with two or more newlines where selected content and the target file names are embedded in crafted multi-line file names. This flaw allows a remote, low privileged attacker to force zgrep to write arbitrary files on the system.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-20",
+                "CWE-179"
+            ],
+            "V2Score": "",
+            "V3Score": 8.8
+        }
+    },
+    "CVE-2022-37434": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "zlib: heap-based buffer over-read and overflow in inflate() in inflate.c via a large gzip header extra field",
+            "Description": "zlib through 1.2.12 has a heap-based buffer over-read or buffer overflow in inflate in inflate.c via a large gzip header extra field. NOTE: only applications that call inflateGetHeader are affected. Some common applications bundle the affected zlib source code but may be unable to call inflateGetHeader (e.g., see the nodejs/node reference).",
+            "Severity": "CRITICAL",
+            "CWE": [
+                "CWE-787"
+            ],
+            "V2Score": "",
+            "V3Score": 8.4
+        }
+    },
+    "CVE-2018-25032": {
+        "Targets": [
+            "postgres:13.3-alpine",
+            "nginx:1.20.0-alpine"
+        ],
+        "Details": {
+            "Title": "zlib: A flaw found in zlib when compressing (not decompressing) certain inputs",
+            "Description": "zlib before 1.2.12 allows memory corruption when deflating (i.e., when compressing) if the input has many distant matches.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-787"
+            ],
+            "V2Score": 5.0,
+            "V3Score": 7.7
+        }
+    },
+    "CVE-2018-6942": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "freetype: NULL pointer dereference in the Ins_GETVARIATION() function",
+            "Description": "An issue was discovered in FreeType 2 through 2.9. A NULL pointer dereference in the Ins_GETVARIATION() function within ttinterp.c could lead to DoS via a crafted font file.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-476"
+            ],
+            "V2Score": 4.3,
+            "V3Score": 4.9
+        }
+    },
+    "CVE-2019-12900": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "bzip2: out-of-bounds write in function BZ2_decompress",
+            "Description": "BZ2_decompress in decompress.c in bzip2 through 1.0.6 has an out-of-bounds write when there are many selectors.",
+            "Severity": "CRITICAL",
+            "CWE": [
+                "CWE-787"
+            ],
+            "V2Score": 7.5,
+            "V3Score": 6.9
+        }
+    },
+    "CVE-2018-0732": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "openssl: Malicious server can send large prime to client during DH(E) TLS handshake causing the client to hang",
+            "Description": "During key agreement in a TLS handshake using a DH(E) based ciphersuite a malicious server can send a very large prime value to the client. This will cause the client to spend an unreasonably long period of time generating a key for this prime resulting in a hang until the client has finished. This could be exploited in a Denial Of Service attack. Fixed in OpenSSL 1.1.0i-dev (Affected 1.1.0-1.1.0h). Fixed in OpenSSL 1.0.2p-dev (Affected 1.0.2-1.0.2o).",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-320"
+            ],
+            "V2Score": 5.0,
+            "V3Score": 5.9
+        }
+    },
+    "CVE-2018-0734": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "openssl: timing side channel attack in the DSA signature algorithm",
+            "Description": "The OpenSSL DSA signature algorithm has been shown to be vulnerable to a timing side channel attack. An attacker could use variations in the signing algorithm to recover the private key. Fixed in OpenSSL 1.1.1a (Affected 1.1.1). Fixed in OpenSSL 1.1.0j (Affected 1.1.0-1.1.0i). Fixed in OpenSSL 1.0.2q (Affected 1.0.2-1.0.2p).",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-327"
+            ],
+            "V2Score": 4.3,
+            "V3Score": 5.5
+        }
+    },
+    "CVE-2018-0737": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "openssl: RSA key generation cache timing vulnerability in crypto/rsa/rsa_gen.c allows attackers to recover private keys",
+            "Description": "The OpenSSL RSA Key generation algorithm has been shown to be vulnerable to a cache timing side channel attack. An attacker with sufficient access to mount cache timing attacks during the RSA key generation process could recover the private key. Fixed in OpenSSL 1.1.0i-dev (Affected 1.1.0-1.1.0h). Fixed in OpenSSL 1.0.2p-dev (Affected 1.0.2b-1.0.2o).",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-327"
+            ],
+            "V2Score": 4.3,
+            "V3Score": 4.6
+        }
+    },
+    "CVE-2018-5407": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "openssl: Side-channel vulnerability on SMT/Hyper-Threading architectures (PortSmash)",
+            "Description": "Simultaneous Multi-threading (SMT) in processors can enable local users to exploit software vulnerable to timing attacks via a side-channel timing attack on 'port contention'.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-203",
+                "CWE-200"
+            ],
+            "V2Score": 1.9,
+            "V3Score": 4.8
+        }
+    },
+    "CVE-2019-1547": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "openssl: side-channel weak encryption vulnerability",
+            "Description": "Normally in OpenSSL EC groups always have a co-factor present and this is used in side channel resistant code paths. However, in some cases, it is possible to construct a group using explicit parameters (instead of using a named curve). In those cases it is possible that such a group does not have the cofactor present. This can occur even where all the parameters match a known named curve. If such a curve is used then OpenSSL falls back to non-side channel resistant code paths which may result in full key recovery during an ECDSA signature operation. In order to be vulnerable an attacker would have to have the ability to time the creation of a large number of signatures where explicit parameters with no co-factor present are in use by an application using libcrypto. For the avoidance of doubt libssl is not vulnerable because explicit parameters are never used. Fixed in OpenSSL 1.1.1d (Affected 1.1.1-1.1.1c). Fixed in OpenSSL 1.1.0l (Affected 1.1.0-1.1.0k). Fixed in OpenSSL 1.0.2t (Affected 1.0.2-1.0.2s).",
+            "Severity": "MEDIUM",
+            "CWE": "",
+            "V2Score": 1.9,
+            "V3Score": 5.1
+        }
+    },
+    "CVE-2019-1559": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "openssl: 0-byte record padding oracle",
+            "Description": "If an application encounters a fatal protocol error and then calls SSL_shutdown() twice (once to send a close_notify, and once to receive one) then OpenSSL can respond differently to the calling application if a 0 byte record is received with invalid padding compared to if a 0 byte record is received with an invalid MAC. If the application then behaves differently based on that in a way that is detectable to the remote peer, then this amounts to a padding oracle that could be used to decrypt data. In order for this to be exploitable \"non-stitched\" ciphersuites must be in use. Stitched ciphersuites are optimised implementations of certain commonly used ciphersuites. Also the application must call SSL_shutdown() twice even if a protocol error has occurred (applications should not do this but some do anyway). Fixed in OpenSSL 1.0.2r (Affected 1.0.2-1.0.2q).",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-203"
+            ],
+            "V2Score": 4.3,
+            "V3Score": 5.9
+        }
+    },
+    "CVE-2018-0495": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "ROHNP: Key Extraction Side Channel in Multiple Crypto Libraries",
+            "Description": "Libgcrypt before 1.7.10 and 1.8.x before 1.8.3 allows a memory-cache side-channel attack on ECDSA signatures that can be mitigated through the use of blinding during the signing process in the _gcry_ecc_ecdsa_sign function in cipher/ecc-ecdsa.c, aka the Return Of the Hidden Number Problem or ROHNP. To discover an ECDSA key, the attacker needs access to either the local machine or a different virtual machine on the same physical host.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-203"
+            ],
+            "V2Score": 1.9,
+            "V3Score": 4.9
+        }
+    },
+    "CVE-2019-12904": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "Libgcrypt: physical addresses being available to other processes leads to a flush-and-reload side-channel attack",
+            "Description": "In Libgcrypt 1.8.4, the C implementation of AES is vulnerable to a flush-and-reload side-channel attack because physical addresses are available to other processes. (The C implementation is used on platforms where an assembly-language implementation is unavailable.) NOTE: the vendor's position is that the issue report cannot be validated because there is no description of an attack",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-668"
+            ],
+            "V2Score": 4.3,
+            "V3Score": 5.9
+        }
+    },
+    "CVE-2019-6978": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "gd: Double free in the gdImage*Ptr in gd_gif_out.c, gd_jpeg.c, and gd_wbmp.c",
+            "Description": "The GD Graphics Library (aka LibGD) 2.2.5 has a double free in the gdImage*Ptr() functions in gd_gif_out.c, gd_jpeg.c, and gd_wbmp.c. NOTE: PHP is unaffected.",
+            "Severity": "CRITICAL",
+            "CWE": [
+                "CWE-415"
+            ],
+            "V2Score": 7.5,
+            "V3Score": 7.6
+        }
+    },
+    "CVE-2018-1000222": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "gd: Double free in src/gd_bump.c:gdImageBmpPtr() via crafted JPEG",
+            "Description": "Libgd version 2.2.5 contains a Double Free Vulnerability vulnerability in gdImageBmpPtr Function that can result in Remote Code Execution . This attack appear to be exploitable via Specially Crafted Jpeg Image can trigger double free. This vulnerability appears to have been fixed in after commit ac16bdf2d41724b5a65255d4c28fb0ec46bc42f5.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-415"
+            ],
+            "V2Score": 6.8,
+            "V3Score": 7.1
+        }
+    },
+    "CVE-2019-6977": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "gd: Heap-based buffer overflow in gdImageColorMatch() in gd_color_match.c",
+            "Description": "gdImageColorMatch in gd_color_match.c in the GD Graphics Library (aka LibGD) 2.2.5, as used in the imagecolormatch function in PHP before 5.6.40, 7.x before 7.1.26, 7.2.x before 7.2.14, and 7.3.x before 7.3.1, has a heap-based buffer overflow. This can be exploited by an attacker who is able to trigger imagecolormatch calls with crafted image data.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-787"
+            ],
+            "V2Score": 6.8,
+            "V3Score": 7.6
+        }
+    },
+    "CVE-2018-5711": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "gd: Infinite loop in gdImageCreateFromGifCtx() in gd_gif_in.c",
+            "Description": "gd_gif_in.c in the GD Graphics Library (aka libgd), as used in PHP before 5.6.33, 7.0.x before 7.0.27, 7.1.x before 7.1.13, and 7.2.x before 7.2.1, has an integer signedness error that leads to an infinite loop via a crafted GIF file, as demonstrated by a call to the imagecreatefromgif or imagecreatefromstring PHP function. This is related to GetCode_ and gdImageCreateFromGifCtx.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-681",
+                "CWE-835"
+            ],
+            "V2Score": 4.3,
+            "V3Score": 4.9
+        }
+    },
+    "CVE-2018-11813": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "libjpeg: \"cjpeg\" utility large loop because read_pixel in rdtarga.c mishandles EOF",
+            "Description": "libjpeg 9c has a large loop because read_pixel in rdtarga.c mishandles EOF.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-834"
+            ],
+            "V2Score": 5.0,
+            "V3Score": 5.4
+        }
+    },
+    "CVE-2017-15232": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "libjpeg-turbo: NULL pointer dereference in jdpostct.c and jquant1.c",
+            "Description": "libjpeg-turbo 1.5.2 has a NULL Pointer Dereference in jdpostct.c and jquant1.c via a crafted JPEG file.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-476"
+            ],
+            "V2Score": 4.3,
+            "V3Score": 4.9
+        }
+    },
+    "CVE-2018-1152": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "libjpeg-turbo: Divide by zero allows for denial of service via crafted BMP image",
+            "Description": "libjpeg-turbo 1.5.90 is vulnerable to a denial of service vulnerability caused by a divide by zero when processing a crafted BMP image.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-369"
+            ],
+            "V2Score": 4.3,
+            "V3Score": 5.4
+        }
+    },
+    "CVE-2018-14498": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "libjpeg-turbo: heap-based buffer over-read via crafted 8-bit BMP in get_8bit_row in rdbmp.c leads to denial of service",
+            "Description": "get_8bit_row in rdbmp.c in libjpeg-turbo through 1.5.90 and MozJPEG through 3.3.1 allows attackers to cause a denial of service (heap-based buffer over-read and application crash) via a crafted 8-bit BMP in which one or more of the color indices is out of range for the number of palette entries.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-125"
+            ],
+            "V2Score": 4.3,
+            "V3Score": 5.5
+        }
+    },
+    "CVE-2018-14550": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "libpng: Stack-based buffer overflow in contrib/pngminus/pnm2png.c:get_token() potentially leading to arbitrary code execution",
+            "Description": "An issue has been found in third-party PNM decoding associated with libpng 1.6.35. It is a stack-based buffer overflow in the function get_token in pnm2png.c in pnm2png.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-787"
+            ],
+            "V2Score": 6.8,
+            "V3Score": 8.2
+        }
+    },
+    "CVE-2018-14048": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "libpng: Segmentation fault in png.c:png_free_data function causing denial of service",
+            "Description": "An issue has been found in libpng 1.6.34. It is a SEGV in the function png_free_data in png.c, related to the recommended error handling for png_read_image.",
+            "Severity": "MEDIUM",
+            "CWE": "",
+            "V2Score": 4.3,
+            "V3Score": 4.9
+        }
+    },
+    "CVE-2019-7317": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "libpng: use-after-free in png_image_free in png.c",
+            "Description": "png_image_free in png.c in libpng 1.6.x before 1.6.37 has a use-after-free because png_image_free_function is called under png_safe_execute.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-416"
+            ],
+            "V2Score": 2.6,
+            "V3Score": 5.3
+        }
+    },
+    "CVE-2018-14404": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "libxml2: NULL pointer dereference in xmlXPathCompOpEval() function in xpath.c",
+            "Description": "A NULL pointer dereference vulnerability exists in the xpath.c:xmlXPathCompOpEval() function of libxml2 through 2.9.8 when parsing an invalid XPath expression in the XPATH_OP_AND or XPATH_OP_OR case. Applications processing untrusted XSL format inputs with the use of the libxml2 library may be vulnerable to a denial of service attack due to a crash of the application.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-476"
+            ],
+            "V2Score": 5.0,
+            "V3Score": 7.2
+        }
+    },
+    "CVE-2018-14567": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "libxml2: Infinite loop caused by incorrect error detection during LZMA decompression",
+            "Description": "libxml2 2.9.8, if --with-lzma is used, allows remote attackers to cause a denial of service (infinite loop) via a crafted XML file that triggers LZMA_MEMLIMIT_ERROR, as demonstrated by xmllint, a different vulnerability than CVE-2015-8035 and CVE-2018-9251.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-835"
+            ],
+            "V2Score": 4.3,
+            "V3Score": 5.4
+        }
+    },
+    "CVE-2018-9251": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "libxml2: infinite loop in xz_decomp function in xzlib.c",
+            "Description": "The xz_decomp function in xzlib.c in libxml2 2.9.8, if --with-lzma is used, allows remote attackers to cause a denial of service (infinite loop) via a crafted XML file that triggers LZMA_MEMLIMIT_ERROR, as demonstrated by xmllint, a different vulnerability than CVE-2015-8035.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-835"
+            ],
+            "V2Score": 2.6,
+            "V3Score": 4.4
+        }
+    },
+    "CVE-2019-11068": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "libxslt: xsltCheckRead and xsltCheckWrite routines security bypass by crafted URL",
+            "Description": "libxslt through 1.1.33 allows bypass of a protection mechanism because callers of xsltCheckRead and xsltCheckWrite permit access even upon receiving a -1 error code. xsltCheckRead can return -1 for a crafted URL that is not actually invalid and is subsequently loaded.",
+            "Severity": "CRITICAL",
+            "CWE": "",
+            "V2Score": 7.5,
+            "V3Score": 8.6
+        }
+    },
+    "CVE-2019-18197": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "libxslt: use after free in xsltCopyText in transform.c could lead to information disclosure",
+            "Description": "In xsltCopyText in transform.c in libxslt 1.1.33, a pointer variable isn't reset under certain circumstances. If the relevant memory area happened to be freed and reused in a certain way, a bounds check could fail and memory outside a buffer could be written to, or uninitialized data could be disclosed.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-416",
+                "CWE-908"
+            ],
+            "V2Score": 5.1,
+            "V3Score": 7.5
+        }
+    },
+    "CVE-2019-14697": {
+        "Targets": [
+            "ui:0.19.0"
+        ],
+        "Details": {
+            "Title": "musl libc through 1.1.23 has an x87 floating-point stack adjustment im ...",
+            "Description": "musl libc through 1.1.23 has an x87 floating-point stack adjustment imbalance, related to the math/i386/ directory. In some cases, use of this library could introduce out-of-bounds writes that are not present in an application's source code.",
+            "Severity": "CRITICAL",
+            "CWE": [
+                "CWE-787"
+            ],
+            "V2Score": 7.5,
+            "V3Score": 9.8
+        }
+    },
+    "CVE-2022-4450": {
+        "Targets": [
+            "postgres:13.3-alpine"
+        ],
+        "Details": {
+            "Title": "openssl: double free after calling PEM_read_bio_ex",
+            "Description": "The function PEM_read_bio_ex() reads a PEM file from a BIO and parses and\ndecodes the \"name\" (e.g. \"CERTIFICATE\"), any header data and the payload data.\nIf the function succeeds then the \"name_out\", \"header\" and \"data\" arguments are\npopulated with pointers to buffers containing the relevant decoded data. The\ncaller is responsible for freeing those buffers. It is possible to construct a\nPEM file that results in 0 bytes of payload data. In this case PEM_read_bio_ex()\nwill return a failure code but will populate the header argument with a pointer\nto a buffer that has already been freed. If the caller also frees this buffer\nthen a double free will occur. This will most likely lead to a crash. This\ncould be exploited by an attacker who has the ability to supply malicious PEM\nfiles for parsing to achieve a denial of service attack.\n\nThe functions PEM_read_bio() and PEM_read() are simple wrappers around\nPEM_read_bio_ex() and therefore these functions are also directly affected.\n\nThese functions are also called indirectly by a number of other OpenSSL\nfunctions including PEM_X509_INFO_read_bio_ex() and\nSSL_CTX_use_serverinfo_file() which are also vulnerable. Some OpenSSL internal\nuses of these functions are not vulnerable because the caller does not free the\nheader argument if PEM_read_bio_ex() returns a failure code. These locations\ninclude the PEM_read_bio_TYPE() functions as well as the decoders introduced in\nOpenSSL 3.0.\n\nThe OpenSSL asn1parse command line application is also impacted by this issue.\n\n\n",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-415"
+            ],
+            "V2Score": "",
+            "V3Score": 7.5
+        }
+    },
+    "CVE-2023-0215": {
+        "Targets": [
+            "postgres:13.3-alpine"
+        ],
+        "Details": {
+            "Title": "openssl: use-after-free following BIO_new_NDEF",
+            "Description": "The public API function BIO_new_NDEF is a helper function used for streaming\nASN.1 data via a BIO. It is primarily used internally to OpenSSL to support the\nSMIME, CMS and PKCS7 streaming capabilities, but may also be called directly by\nend user applications.\n\nThe function receives a BIO from the caller, prepends a new BIO_f_asn1 filter\nBIO onto the front of it to form a BIO chain, and then returns the new head of\nthe BIO chain to the caller. Under certain conditions, for example if a CMS\nrecipient public key is invalid, the new filter BIO is freed and the function\nreturns a NULL result indicating a failure. However, in this case, the BIO chain\nis not properly cleaned up and the BIO passed by the caller still retains\ninternal pointers to the previously freed filter BIO. If the caller then goes on\nto call BIO_pop() on the BIO then a use-after-free will occur. This will most\nlikely result in a crash.\n\n\n\nThis scenario occurs directly in the internal function B64_write_ASN1() which\nmay cause BIO_new_NDEF() to be called and will subsequently call BIO_pop() on\nthe BIO. This internal function is in turn called by the public API functions\nPEM_write_bio_ASN1_stream, PEM_write_bio_CMS_stream, PEM_write_bio_PKCS7_stream,\nSMIME_write_ASN1, SMIME_write_CMS and SMIME_write_PKCS7.\n\nOther public API functions that may be impacted by this include\ni2d_ASN1_bio_stream, BIO_new_CMS, BIO_new_PKCS7, i2d_CMS_bio_stream and\ni2d_PKCS7_bio_stream.\n\nThe OpenSSL cms and smime command line applications are similarly affected.\n\n\n\n",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-416"
+            ],
+            "V2Score": "",
+            "V3Score": 7.5
+        }
+    },
+    "CVE-2023-0286": {
+        "Targets": [
+            "postgres:13.3-alpine"
+        ],
+        "Details": {
+            "Title": "openssl: X.400 address type confusion in X.509 GeneralName",
+            "Description": "There is a type confusion vulnerability relating to X.400 address processing\ninside an X.509 GeneralName. X.400 addresses were parsed as an ASN1_STRING but\nthe public structure definition for GENERAL_NAME incorrectly specified the type\nof the x400Address field as ASN1_TYPE. This field is subsequently interpreted by\nthe OpenSSL function GENERAL_NAME_cmp as an ASN1_TYPE rather than an\nASN1_STRING.\n\nWhen CRL checking is enabled (i.e. the application sets the\nX509_V_FLAG_CRL_CHECK flag), this vulnerability may allow an attacker to pass\narbitrary pointers to a memcmp call, enabling them to read memory contents or\nenact a denial of service. In most cases, the attack requires the attacker to\nprovide both the certificate chain and CRL, neither of which need to have a\nvalid signature. If the attacker only controls one of these inputs, the other\ninput must already contain an X.400 address as a CRL distribution point, which\nis uncommon. As such, this vulnerability is most likely to only affect\napplications which have implemented their own functionality for retrieving CRLs\nover a network.\n\n",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-843"
+            ],
+            "V2Score": "",
+            "V3Score": 7.4
+        }
+    },
+    "CVE-2023-0464": {
+        "Targets": [
+            "postgres:13.3-alpine"
+        ],
+        "Details": {
+            "Title": "openssl: Denial of service by excessive resource usage in verifying X509 policy constraints",
+            "Description": "A security vulnerability has been identified in all supported versions\n\nof OpenSSL related to the verification of X.509 certificate chains\nthat include policy constraints.  Attackers may be able to exploit this\nvulnerability by creating a malicious certificate chain that triggers\nexponential use of computational resources, leading to a denial-of-service\n(DoS) attack on affected systems.\n\nPolicy processing is disabled by default but can be enabled by passing\nthe `-policy' argument to the command line utilities or by calling the\n`X509_VERIFY_PARAM_set1_policies()' function.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-295"
+            ],
+            "V2Score": "",
+            "V3Score": 6.7
+        }
+    },
+    "CVE-2022-4304": {
+        "Targets": [
+            "postgres:13.3-alpine"
+        ],
+        "Details": {
+            "Title": "openssl: timing attack in RSA Decryption implementation",
+            "Description": "A timing based side channel exists in the OpenSSL RSA Decryption implementation\nwhich could be sufficient to recover a plaintext across a network in a\nBleichenbacher style attack. To achieve a successful decryption an attacker\nwould have to be able to send a very large number of trial messages for\ndecryption. The vulnerability affects all RSA padding modes: PKCS#1 v1.5,\nRSA-OEAP and RSASVE.\n\nFor example, in a TLS connection, RSA is commonly used by a client to send an\nencrypted pre-master secret to the server. An attacker that had observed a\ngenuine connection between a client and a server could use this flaw to send\ntrial messages to the server and record the time taken to process them. After a\nsufficiently large number of messages the attacker could recover the pre-master\nsecret used for the original connection and thus be able to decrypt the\napplication data sent over that connection.\n\n",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-203"
+            ],
+            "V2Score": "",
+            "V3Score": 5.9
+        }
+    },
+    "CVE-2023-0465": {
+        "Targets": [
+            "postgres:13.3-alpine"
+        ],
+        "Details": {
+            "Title": "openssl: Invalid certificate policies in leaf certificates are silently ignored",
+            "Description": "Applications that use a non-default option when verifying certificates may be\nvulnerable to an attack from a malicious CA to circumvent certain checks.\n\nInvalid certificate policies in leaf certificates are silently ignored by\nOpenSSL and other certificate policy checks are skipped for that certificate.\nA malicious CA could use this to deliberately assert invalid certificate policies\nin order to circumvent policy checking on the certificate altogether.\n\nPolicy processing is disabled by default but can be enabled by passing\nthe `-policy' argument to the command line utilities or by calling the\n`X509_VERIFY_PARAM_set1_policies()' function.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-295"
+            ],
+            "V2Score": "",
+            "V3Score": 5.3
+        }
+    },
+    "CVE-2021-37600": {
+        "Targets": [
+            "postgres:13.3-alpine"
+        ],
+        "Details": {
+            "Title": "util-linux: integer overflow can lead to buffer overflow in get_sem_elements() in sys-utils/ipcutils.c",
+            "Description": "An integer overflow in util-linux through 2.37.1 can potentially cause a buffer overflow if an attacker were able to use system resources in a way that leads to a large number in the /proc/sysvipc/sem file. NOTE: this is unexploitable in GNU C Library environments, and possibly in all realistic environments.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-190"
+            ],
+            "V2Score": 1.2,
+            "V3Score": 5.1
+        }
+    },
+    "CVE-2021-3995": {
+        "Targets": [
+            "postgres:13.3-alpine"
+        ],
+        "Details": {
+            "Title": "util-linux: Unauthorized unmount of FUSE filesystems belonging to users with similar uid",
+            "Description": "A logic error was found in the libmount library of util-linux in the function that allows an unprivileged user to unmount a FUSE filesystem. This flaw allows an unprivileged local attacker to unmount FUSE filesystems that belong to certain other users who have a UID that is a prefix of the UID of the attacker in its string form. An attacker may use this flaw to cause a denial of service to applications that use the affected filesystems.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-552"
+            ],
+            "V2Score": "",
+            "V3Score": 5.1
+        }
+    },
+    "CVE-2021-3996": {
+        "Targets": [
+            "postgres:13.3-alpine"
+        ],
+        "Details": {
+            "Title": "util-linux: Unauthorized unmount of filesystems in libmount",
+            "Description": "A logic error was found in the libmount library of util-linux in the function that allows an unprivileged user to unmount a FUSE filesystem. This flaw allows a local user on a vulnerable system to unmount other users' filesystems that are either world-writable themselves (like /tmp) or mounted in a world-writable directory. An attacker may use this flaw to cause a denial of service to applications that use the affected filesystems.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-552"
+            ],
+            "V2Score": "",
+            "V3Score": 5.5
+        }
+    },
+    "CVE-2022-0563": {
+        "Targets": [
+            "postgres:13.3-alpine"
+        ],
+        "Details": {
+            "Title": "util-linux: partial disclosure of arbitrary files in chfn and chsh when compiled with libreadline",
+            "Description": "A flaw was found in the util-linux chfn and chsh utilities when compiled with Readline support. The Readline library uses an \"INPUTRC\" environment variable to get a path to the library config file. When the library cannot parse the specified file, it prints an error message containing data from the file. This flaw allows an unprivileged user to read root-owned files, potentially leading to privilege escalation. This flaw affects util-linux versions prior to 2.37.4.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-209"
+            ],
+            "V2Score": 1.9,
+            "V3Score": 5.5
+        }
+    },
+    "CVE-2024-27304": {
+        "Targets": [
+            "auth:0.19.0"
+        ],
+        "Details": {
+            "Title": "pgx: SQL Injection via Protocol Message Size Overflow",
+            "Description": "pgx is a PostgreSQL driver and toolkit for Go. SQL injection can occur if an attacker can cause a single query or bind message to exceed 4 GB in size. An integer overflow in the calculated message size can cause the one large message to be sent as multiple messages under the attacker's control. The problem is resolved in v4.18.2 and v5.5.4. As a workaround, reject user input large enough to cause a single query or bind message to exceed 4 GB in size.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-190",
+                "CWE-89"
+            ],
+            "V2Score": "",
+            "V3Score": 8.1
+        }
+    },
+    "CVE-2022-21698": {
+        "Targets": [
+            "auth:0.19.0"
+        ],
+        "Details": {
+            "Title": "prometheus/client_golang: Denial of service using InstrumentHandlerCounter",
+            "Description": "client_golang is the instrumentation library for Go applications in Prometheus, and the promhttp package in client_golang provides tooling around HTTP servers and clients. In client_golang prior to version 1.11.1, HTTP server is susceptible to a Denial of Service through unbounded cardinality, and potential memory exhaustion, when handling requests with non-standard HTTP methods. In order to be affected, an instrumented software must use any of `promhttp.InstrumentHandler*` middleware except `RequestsInFlight`; not filter any specific methods (e.g GET) before middleware; pass metric with `method` label name to our middleware; and not have any firewall/LB/proxy that filters away requests with unknown `method`. client_golang version 1.11.1 contains a patch for this issue. Several workarounds are available, including removing the `method` label name from counter/gauge used in the InstrumentHandler; turning off affected promhttp handlers; adding custom middleware before promhttp handler that will sanitize the request method given by Go http.Request; and using a reverse proxy or web application firewall, configured to only allow a limited set of methods.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-770",
+                "CWE-400"
+            ],
+            "V2Score": 5.0,
+            "V3Score": 7.5
+        }
+    },
+    "CVE-2023-48795": {
+        "Targets": [
+            "auth:0.19.0"
+        ],
+        "Details": {
+            "Title": "ssh: Prefix truncation attack on Binary Packet Protocol (BPP)",
+            "Description": "The SSH transport protocol with certain OpenSSH extensions, found in OpenSSH before 9.6 and other products, allows remote attackers to bypass integrity checks such that some packets are omitted (from the extension negotiation message), and a client and server may consequently end up with a connection for which some security features have been downgraded or disabled, aka a Terrapin attack. This occurs because the SSH Binary Packet Protocol (BPP), implemented by these extensions, mishandles the handshake phase and mishandles use of sequence numbers. For example, there is an effective attack against SSH's use of ChaCha20-Poly1305 (and CBC with Encrypt-then-MAC). The bypass occurs in chacha20-poly1305@openssh.com and (if CBC is used) the -etm@openssh.com MAC algorithms. This also affects Maverick Synergy Java SSH API before 3.1.0-SNAPSHOT, Dropbear through 2022.83, Ssh before 5.1.1 in Erlang/OTP, PuTTY before 0.80, AsyncSSH before 2.14.2, golang.org/x/crypto before 0.17.0, libssh before 0.10.6, libssh2 through 1.11.0, Thorn Tech SFTP Gateway before 3.4.6, Tera Term before 5.1, Paramiko before 3.4.0, jsch before 0.2.15, SFTPGo before 2.5.6, Netgate pfSense Plus through 23.09.1, Netgate pfSense CE through 2.7.2, HPN-SSH through 18.2.0, ProFTPD before 1.3.8b (and before 1.3.9rc2), ORYX CycloneSSH before 2.3.4, NetSarang XShell 7 before Build 0144, CrushFTP before 10.6.0, ConnectBot SSH library before 2.2.22, Apache MINA sshd through 2.11.0, sshj through 0.37.0, TinySSH through 20230101, trilead-ssh2 6401, LANCOM LCOS and LANconfig, FileZilla before 3.66.4, Nova before 11.8, PKIX-SSH before 14.4, SecureCRT before 9.4.3, Transmit5 before 5.10.4, Win32-OpenSSH before 9.5.0.0p1-Beta, WinSCP before 6.2.2, Bitvise SSH Server before 9.32, Bitvise SSH Client before 9.33, KiTTY through 0.76.1.13, the net-ssh gem 7.2.0 for Ruby, the mscdex ssh2 module before 1.15.0 for Node.js, the thrussh library before 0.35.1 for Rust, and the Russh crate before 0.40.2 for Rust.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-354"
+            ],
+            "V2Score": "",
+            "V3Score": 5.9
+        }
+    },
+    "CVE-2022-27664": {
+        "Targets": [
+            "auth:0.19.0"
+        ],
+        "Details": {
+            "Title": "golang: net/http: handle server errors after sending GOAWAY",
+            "Description": "In net/http in Go before 1.18.6 and 1.19.x before 1.19.1, attackers can cause a denial of service because an HTTP/2 connection can hang during closing if shutdown were preempted by a fatal error.",
+            "Severity": "HIGH",
+            "CWE": "",
+            "V2Score": "",
+            "V3Score": 7.2
+        }
+    },
+    "CVE-2022-41721": {
+        "Targets": [
+            "auth:0.19.0"
+        ],
+        "Details": {
+            "Title": "x/net/http2/h2c: request smuggling",
+            "Description": "A request smuggling attack is possible when using MaxBytesHandler. When using MaxBytesHandler, the body of an HTTP request is not fully consumed. When the server attempts to read HTTP2 frames from the connection, it will instead be reading the body of the HTTP request, which could be attacker-manipulated to represent arbitrary HTTP2 requests.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-444"
+            ],
+            "V2Score": "",
+            "V3Score": 7.5
+        }
+    },
+    "CVE-2022-41723": {
+        "Targets": [
+            "auth:0.19.0"
+        ],
+        "Details": {
+            "Title": "net/http, golang.org/x/net/http2: avoid quadratic complexity in HPACK decoding",
+            "Description": "A maliciously crafted HTTP/2 stream could cause excessive CPU consumption in the HPACK decoder, sufficient to cause a denial of service from a small number of small requests.",
+            "Severity": "HIGH",
+            "CWE": "",
+            "V2Score": "",
+            "V3Score": 7.5
+        }
+    },
+    "CVE-2023-39325": {
+        "Targets": [
+            "auth:0.19.0"
+        ],
+        "Details": {
+            "Title": "golang: net/http, x/net/http2: rapid stream resets can cause excessive work (CVE-2023-44487)",
+            "Description": "A malicious HTTP/2 client which rapidly creates requests and immediately resets them can cause excessive server resource consumption. While the total number of requests is bounded by the http2.Server.MaxConcurrentStreams setting, resetting an in-progress request allows the attacker to create a new request while the existing one is still executing. With the fix applied, HTTP/2 servers now bound the number of simultaneously executing handler goroutines to the stream concurrency limit (MaxConcurrentStreams). New requests arriving when at the limit (which can only happen after the client has reset an existing, in-flight request) will be queued until a handler exits. If the request queue grows too large, the server will terminate the connection. This issue is also fixed in golang.org/x/net/http2 for users manually configuring HTTP/2. The default stream concurrency limit is 250 streams (requests) per HTTP/2 connection. This value may be adjusted using the golang.org/x/net/http2 package; see the Server.MaxConcurrentStreams setting and the ConfigureServer function.",
+            "Severity": "HIGH",
+            "CWE": [
+                "CWE-770"
+            ],
+            "V2Score": "",
+            "V3Score": 7.5
+        }
+    },
+    "CVE-2022-41717": {
+        "Targets": [
+            "auth:0.19.0"
+        ],
+        "Details": {
+            "Title": "golang: net/http: excessive memory growth in a Go server accepting HTTP/2 requests",
+            "Description": "An attacker can cause excessive memory growth in a Go server accepting HTTP/2 requests. HTTP/2 server connections contain a cache of HTTP header keys sent by the client. While the total number of entries in this cache is capped, an attacker sending very large keys can cause the server to allocate approximately 64 MiB per open connection.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-770"
+            ],
+            "V2Score": "",
+            "V3Score": 5.3
+        }
+    },
+    "CVE-2023-3978": {
+        "Targets": [
+            "auth:0.19.0"
+        ],
+        "Details": {
+            "Title": "golang.org/x/net/html: Cross site scripting",
+            "Description": "Text nodes not in the HTML namespace are incorrectly literally rendered, causing text which should be escaped to not be. This could lead to an XSS attack.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-79"
+            ],
+            "V2Score": "",
+            "V3Score": 6.1
+        }
+    },
+    "CVE-2023-44487": {
+        "Targets": [
+            "auth:0.19.0"
+        ],
+        "Details": {
+            "Title": "HTTP/2: Multiple HTTP/2 enabled web servers are vulnerable to a DDoS attack (Rapid Reset Attack)",
+            "Description": "The HTTP/2 protocol allows a denial of service (server resource consumption) because request cancellation can reset many streams quickly, as exploited in the wild in August through October 2023.",
+            "Severity": "MEDIUM",
+            "CWE": [
+                "CWE-400"
+            ],
+            "V2Score": "",
+            "V3Score": 7.0
+        }
+    },
+    "CVE-2023-45288": {
+        "Targets": [
+            "auth:0.19.0"
+        ],
+        "Details": {
+            "Title": "golang: net/http, x/net/http2: unlimited number of CONTINUATION frames causes DoS",
+            "Description": "An attacker may cause an HTTP/2 endpoint to read arbitrary amounts of header data by sending an excessive number of CONTINUATION frames. Maintaining HPACK state requires parsing and processing all HEADERS and CONTINUATION frames on a connection. When a request's headers exceed MaxHeaderBytes, no memory is allocated to store the excess headers, but they are still parsed. This permits an attacker to cause an HTTP/2 endpoint to read arbitrary amounts of header data, all associated with a request which is going to be rejected. These headers can include Huffman-encoded data which is significantly more expensive for the receiver to decode than for an attacker to send. The fix sets a limit on the amount of excess header frames we will process before closing a connection.",
+            "Severity": "MEDIUM",
+            "CWE": "",
+            "V2Score": "",
+            "V3Score": 6.4
+        }
+    },
+    "CVE-2024-24786": {
+        "Targets": [
+            "auth:0.19.0"
+        ],
+        "Details": {
+            "Title": "golang-protobuf: encoding/protojson, internal/encoding/json: infinite loop in protojson.Unmarshal when unmarshaling certain forms of invalid JSON",
+            "Description": "The protojson.Unmarshal function can enter an infinite loop when unmarshaling certain forms of invalid JSON. This condition can occur when unmarshaling into a message which contains a google.protobuf.Any value, or when the UnmarshalOptions.DiscardUnknown option is set.",
+            "Severity": "MEDIUM",
+            "CWE": "",
+            "V2Score": "",
+            "V3Score": 5.9
+        }
+    }
+}
