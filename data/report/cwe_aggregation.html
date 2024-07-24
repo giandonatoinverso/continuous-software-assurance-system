@@ -1,0 +1,568 @@
+
+                    <html>
+                    <head><title>Risk Analysis Report</title></head>
+                    <style>table {font-family: Arial, sans-serif; border-collapse: collapse; width: 100%;}td, th {border: 1px solid #dddddd; text-align: left; padding: 8px;}tr:nth-child(even) {background-color: #f2f2f2;}th {background-color: #dddddd;}</style>
+                    <body>
+                        
+            <h2>Summary of results found</h2>
+            <h3><strong>Total unique CVE:</strong> 1199</h3>
+            <h3><strong>Total unique CWE:</strong> 101</h3>
+            <h3>Severity distribution</h3><ul><li><strong>CRITICAL:</strong> 10/1199</li><li><strong>HIGH:</strong> 77/1199</li><li><strong>MEDIUM:</strong> 1112/1199</li><li><strong>LOW:</strong> 0/1199</li><li><strong>UNKNOWN:</strong> 0/1199</li></ul>
+                    <h2>Threat aggregation summary</h2>
+                    <h3>CWE searched (25):</h3><p>Mainflux</p><ul><li><b>Intentional physical damage</b>: 200, 1252</li><li><b>Unintentional damage/loss of information or IT assets</b>: 16, 199, 250, 277, 710</li><li><b>Poisoning</b>: 494, 502</li><li><b>Failures/malfunction</b>: 118, 385</li><li><b>Interception and unauthorized acquisition</b>: 200, 284, 294, 300</li><li><b>Nefarious activity/abuse</b>: 20, 77, 94, 285, 287, 359, 400, 522</li><li><b>Organizational threats</b>: 399, 706, 1242</li></ul><p>HomeAssistant</p><ul><li><b>Intentional physical damage</b>: 200, 1252</li><li><b>Unintentional damage/loss of information or IT assets</b>: 16, 199, 250, 277, 710</li><li><b>Poisoning</b>: 494, 502</li><li><b>Failures/malfunction</b>: 118, 385</li><li><b>Interception and unauthorized acquisition</b>: 200, 284, 294, 300</li><li><b>Nefarious activity/abuse</b>: 20, 77, 94, 285, 287, 359, 400, 522</li><li><b>Organizational threats</b>: 399, 706, 1242</li></ul><p>ExternalDevice</p><ul><li><b>Intentional physical damage</b>: 200, 1252</li><li><b>Unintentional damage/loss of information or IT assets</b>: 16, 199, 250, 277, 710</li><li><b>Poisoning</b>: 494, 502</li><li><b>Failures/malfunction</b>: 118, 385</li><li><b>Interception and unauthorized acquisition</b>: 200, 284, 294, 300</li><li><b>Nefarious activity/abuse</b>: 20, 77, 94, 285, 287, 359, 400, 522</li><li><b>Organizational threats</b>: 399, 706, 1242</li></ul><h3>CWE found (11/25):</h3><ul><li>20, 118, 200, 284, 287, 294, 399, 400, 502, 522, 706</li></ul><h3>CWE found per category</h3><ul><li><strong>Mainflux:</strong> 11/11</li><li><strong>HomeAssistant:</strong> 11/11</li><li><strong>ExternalDevice:</strong> 11/11</li></ul><h3>Severity distribution</h3><ul><li><strong>CRITICAL:</strong> 0/37</li><li><strong>HIGH:</strong> 7/37</li><li><strong>MEDIUM:</strong> 30/37</li><li><strong>LOW:</strong> 0/37</li><li><strong>UNKNOWN:</strong> 0/37</li></ul>
+                    <h2>Risk analysis</h2>
+                    <h3><strong>Normalized overall risk level:</strong> 36</h3>
+                    <h3>Risk per CWE</h3><ul><li><strong>CWE-400:</strong> 35/100</li><li><strong>CWE-200:</strong> 18/100</li><li><strong>CWE-20:</strong> 17/100</li><li><strong>CWE-522:</strong> 6/100</li><li><strong>CWE-502:</strong> 5/100</li><li><strong>CWE-284:</strong> 5/100</li><li><strong>CWE-118:</strong> 4/100</li><li><strong>CWE-287:</strong> 4/100</li><li><strong>CWE-706:</strong> 3/100</li><li><strong>CWE-399:</strong> 3/100</li><li><strong>CWE-294:</strong> 2/100</li></ul><h3>Risk per Threat</h3><ul><li><strong>Nefarious activity/abuse:</strong> 37/100</li><li><strong>Interception and unauthorized acquisition:</strong> 15/100</li><li><strong>Intentional physical damage:</strong> 10/100</li><li><strong>Organizational threats:</strong> 4/100</li><li><strong>Poisoning:</strong> 3/100</li><li><strong>Failures/malfunction:</strong> 2/100</li><li><strong>Unintentional damage/loss of information or IT assets:</strong> 0/100</li></ul>
+                        
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>CWE</th>
+                        <th>Categories</th>
+                        <th>Severity</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+            
+                <tr>
+                    <td style='white-space:nowrap'>400</td>
+                    <td>ExternalDevice, HomeAssistant, Mainflux</td>
+                    <td>HIGH, MEDIUM</td>
+                    <td>
+                                    <div>
+                                      <strong>File:</strong> /Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/pkg/servers/http.go, /Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/cmd/ws/main.go<br>
+                                      <strong>Severity:</strong> MEDIUM<br>
+                                      <strong>Confidence:</strong> LOW<br>
+                                      <strong>Lines and Columns:</strong> 22:13, 212:13<br>
+                                      <strong>Details:</strong> Potential Slowloris Attack because ReadHeaderTimeout is not configured in the http.Server<br>
+                                      <strong>Tools:</strong> Gosec Mainflux, Bandit
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2022-21698<br>
+                                        <strong>Severity:</strong> HIGH<br>
+                                        <strong>Target:</strong> Trivy Mainflux Golang<br>
+                                        <strong>Title:</strong> prometheus/client_golang: Denial of service using InstrumentHandlerCounter<br>
+                                        <strong>V2 Score:</strong> 5.0<br>
+                                        <strong>V3 Score:</strong> 7.5<br>
+                                        <strong>Tools:</strong> Trivy Mainflux Golang, Trivy Docker
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2023-44487<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> Trivy Mainflux Golang<br>
+                                        <strong>Title:</strong> HTTP/2: Multiple HTTP/2 enabled web servers are vulnerable to a DDoS attack (Rapid Reset Attack)<br>
+                                        <strong>V2 Score:</strong> <br>
+                                        <strong>V3 Score:</strong> 7.0<br>
+                                        <strong>Tools:</strong> Trivy Mainflux Golang, Trivy Docker
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2022-27781<br>
+                                        <strong>Severity:</strong> HIGH<br>
+                                        <strong>Target:</strong> nginx:1.20.0-alpine<br>
+                                        <strong>Title:</strong> curl: CERTINFO never-ending busy-loop<br>
+                                        <strong>V2 Score:</strong> 5.0<br>
+                                        <strong>V3 Score:</strong> 7.5<br>
+                                        <strong>Tools:</strong> Trivy Docker
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2021-3759<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> kernel: unaccounted ipc objects in Linux kernel lead to breaking memcg limits and DoS attacks<br>
+                                        <strong>V2 Score:</strong> <br>
+                                        <strong>V3 Score:</strong> 5.5<br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2021-3764<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> kernel: DoS in ccp_run_aes_gcm_cmd() function<br>
+                                        <strong>V2 Score:</strong> <br>
+                                        <strong>V3 Score:</strong> 5.5<br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2018-17977<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> kernel: Mishandled interactions among XFRM Netlink messages, IPPROTO_AH packets, and IPPROTO_IP packets resulting in a denial of service<br>
+                                        <strong>V2 Score:</strong> 4.9<br>
+                                        <strong>V3 Score:</strong> 4.7<br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2024-26976<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> kernel: KVM: Always flush async #PF workqueue when vCPU is being destroyed<br>
+                                        <strong>V2 Score:</strong> <br>
+                                        <strong>V3 Score:</strong> 5.5<br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2024-35799<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> kernel: drm/amd/display: Prevent crash when disable stream<br>
+                                        <strong>V2 Score:</strong> <br>
+                                        <strong>V3 Score:</strong> 5.5<br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2024-35948<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> kernel: bcachefs: Check for journal entries overruning end of sb clean section<br>
+                                        <strong>V2 Score:</strong> <br>
+                                        <strong>V3 Score:</strong> 5.5<br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2024-35997<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> kernel: HID: i2c-hid: remove I2C_HID_READ_PENDING flag to prevent lock-up<br>
+                                        <strong>V2 Score:</strong> <br>
+                                        <strong>V3 Score:</strong> 5.5<br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2024-39479<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> kernel: drm/i915/hwmon: Get rid of devm<br>
+                                        <strong>V2 Score:</strong> <br>
+                                        <strong>V3 Score:</strong> 6.1<br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2020-24504<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> kernel: Uncontrolled resource consumption in some Intel(R) Ethernet E810 Adapter drivers<br>
+                                        <strong>V2 Score:</strong> 2.1<br>
+                                        <strong>V3 Score:</strong> 5.5<br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2021-4440<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> kernel: x86/xen: Drop USERGS_SYSRET64 paravirt call<br>
+                                        <strong>V2 Score:</strong> <br>
+                                        <strong>V3 Score:</strong> 5.5<br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    </td>
+                </tr>
+                
+                <tr>
+                    <td style='white-space:nowrap'>200</td>
+                    <td>ExternalDevice, Mainflux</td>
+                    <td>HIGH, MEDIUM</td>
+                    <td>
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2022-27775<br>
+                                        <strong>Severity:</strong> HIGH<br>
+                                        <strong>Target:</strong> nginx:1.20.0-alpine<br>
+                                        <strong>Title:</strong> curl: bad local IPv6 connection reuse<br>
+                                        <strong>V2 Score:</strong> 5.0<br>
+                                        <strong>V3 Score:</strong> 7.5<br>
+                                        <strong>Tools:</strong> Trivy Docker
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2021-22925<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> nginx:1.20.0-alpine<br>
+                                        <strong>Title:</strong> curl: Incorrect fix for CVE-2021-22898 TELNET stack contents disclosure<br>
+                                        <strong>V2 Score:</strong> 5.0<br>
+                                        <strong>V3 Score:</strong> 4.2<br>
+                                        <strong>Tools:</strong> Trivy Docker
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2018-5407<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> ui:0.19.0<br>
+                                        <strong>Title:</strong> openssl: Side-channel vulnerability on SMT/Hyper-Threading architectures (PortSmash)<br>
+                                        <strong>V2 Score:</strong> 1.9<br>
+                                        <strong>V3 Score:</strong> 4.8<br>
+                                        <strong>Tools:</strong> Trivy Docker
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2015-8553<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> xen: non-maskable interrupts triggerable by guests (xsa120)<br>
+                                        <strong>V2 Score:</strong> 3.7<br>
+                                        <strong>V3 Score:</strong> 6.5<br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2021-3714<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> kernel: Remote Page Deduplication Attacks<br>
+                                        <strong>V2 Score:</strong> <br>
+                                        <strong>V3 Score:</strong> 5.9<br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2024-36910<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> kernel: uio_hv_generic: Don&amp;#39;t free decrypted memory<br>
+                                        <strong>V2 Score:</strong> <br>
+                                        <strong>V3 Score:</strong> 4.4<br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2024-36955<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> kernel: ALSA: hda: intel-sdw-acpi: fix usage of device_get_named_child_node()<br>
+                                        <strong>V2 Score:</strong> <br>
+                                        <strong>V3 Score:</strong> 5.5<br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2022-4543<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> kernel: KASLR Prefetch Bypass Breaks KPTI<br>
+                                        <strong>V2 Score:</strong> <br>
+                                        <strong>V3 Score:</strong> 5.5<br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    </td>
+                </tr>
+                
+                <tr>
+                    <td style='white-space:nowrap'>20</td>
+                    <td>ExternalDevice, HomeAssistant, Mainflux</td>
+                    <td>HIGH, MEDIUM, LOW</td>
+                    <td>
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2022-1271<br>
+                                        <strong>Severity:</strong> HIGH<br>
+                                        <strong>Target:</strong> postgres:13.3-alpine, nginx:1.20.0-alpine<br>
+                                        <strong>Title:</strong> gzip: arbitrary-file-write vulnerability<br>
+                                        <strong>V2 Score:</strong> <br>
+                                        <strong>V3 Score:</strong> 8.8<br>
+                                        <strong>Tools:</strong> Trivy Docker
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                      <strong>File:</strong> /Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/homeassistant/components/environment_canada/config_flow.py, /Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/homeassistant/components/environment_canada/coordinator.py, /Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/homeassistant/components/lg_netcast/helpers.py, /Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/homeassistant/components/rtorrent/sensor.py, /Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/homeassistant/components/supervisord/sensor.py, /Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/homeassistant/components/webmin/config_flow.py, /Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/script/microsoft_tts.py, /Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/tests/components/environment_canada/test_config_flow.py, /Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/tests/components/lg_netcast/__init__.py, /Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/tests/components/webmin/test_config_flow.py<br>
+                                      <strong>Severity:</strong> LOW<br>
+                                      <strong>Confidence:</strong> HIGH<br>
+                                      <strong>Lines and Columns:</strong> 4:0, 4:0, 4:0, 6:0, 6:0, 8:0, 5:0, 4:0, 4:0, 7:0<br>
+                                      <strong>Details:</strong> Using xml.etree.ElementTree to parse untrusted XML data is known to be vulnerable to XML attacks. Replace xml.etree.ElementTree with the equivalent defusedxml package, or make sure defusedxml.defuse_stdlib() is called.<br>
+                                      <strong>Tools:</strong> Bandit
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2023-27043<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> python: Parsing errors in email/_parseaddr.py lead to incorrect value in email address part of tuple<br>
+                                        <strong>V2 Score:</strong> <br>
+                                        <strong>V3 Score:</strong> 5.3<br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2021-4204<br>
+                                        <strong>Severity:</strong> HIGH<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> kernel: improper input validation may lead to privilege escalation<br>
+                                        <strong>V2 Score:</strong> <br>
+                                        <strong>V3 Score:</strong> 7.0<br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2021-3655<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> kernel: missing size validations on inbound SCTP packets<br>
+                                        <strong>V2 Score:</strong> 2.1<br>
+                                        <strong>V3 Score:</strong> 3.3<br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2020-26144<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> kernel: accepting unencrypted A-MSDU frames that start with RFC1042 header<br>
+                                        <strong>V2 Score:</strong> 3.3<br>
+                                        <strong>V3 Score:</strong> 6.5<br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    </td>
+                </tr>
+                
+                <tr>
+                    <td style='white-space:nowrap'>522</td>
+                    <td>Mainflux</td>
+                    <td>MEDIUM</td>
+                    <td>
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2021-22923<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> nginx:1.20.0-alpine<br>
+                                        <strong>Title:</strong> curl: Metalink download sends credentials<br>
+                                        <strong>V2 Score:</strong> 2.6<br>
+                                        <strong>V3 Score:</strong> 5.5<br>
+                                        <strong>Tools:</strong> Trivy Docker
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2022-27774<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> nginx:1.20.0-alpine<br>
+                                        <strong>Title:</strong> curl: credential leak on redirect<br>
+                                        <strong>V2 Score:</strong> 3.5<br>
+                                        <strong>V3 Score:</strong> 5.3<br>
+                                        <strong>Tools:</strong> Trivy Docker
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2022-27776<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> nginx:1.20.0-alpine<br>
+                                        <strong>Title:</strong> curl: auth/cookie leak on redirect<br>
+                                        <strong>V2 Score:</strong> 4.3<br>
+                                        <strong>V3 Score:</strong> 5.4<br>
+                                        <strong>Tools:</strong> Trivy Docker
+                                    </div>
+                                    <hr>
+                                    </td>
+                </tr>
+                
+                <tr>
+                    <td style='white-space:nowrap'>502</td>
+                    <td>ExternalDevice, HomeAssistant</td>
+                    <td>MEDIUM, LOW</td>
+                    <td>
+                                    <div>
+                                      <strong>File:</strong> /Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/tests/components/owntracks/test_device_tracker.py<br>
+                                      <strong>Severity:</strong> LOW<br>
+                                      <strong>Confidence:</strong> HIGH<br>
+                                      <strong>Lines and Columns:</strong> 5:0, 1379:28<br>
+                                      <strong>Details:</strong> Consider possible security implications associated with pickle module.<br>
+                                      <strong>Tools:</strong> Bandit
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2022-28948<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> golang-gopkg-yaml: crash when attempting to deserialize invalid input<br>
+                                        <strong>V2 Score:</strong> 5.0<br>
+                                        <strong>V3 Score:</strong> 7.5<br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    </td>
+                </tr>
+                
+                <tr>
+                    <td style='white-space:nowrap'>284</td>
+                    <td>ExternalDevice</td>
+                    <td>MEDIUM</td>
+                    <td>
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2021-4037<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> kernel: security regression for CVE-2018-13405<br>
+                                        <strong>V2 Score:</strong> <br>
+                                        <strong>V3 Score:</strong> 6.1<br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2021-3864<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> kernel: descendant&#x27;s dumpable setting with certain SUID binaries<br>
+                                        <strong>V2 Score:</strong> <br>
+                                        <strong>V3 Score:</strong> 7.0<br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    </td>
+                </tr>
+                
+                <tr>
+                    <td style='white-space:nowrap'>118</td>
+                    <td>ExternalDevice, Mainflux</td>
+                    <td>MEDIUM</td>
+                    <td>
+                                    <div>
+                                      <strong>File:</strong> /Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/webhooks/service.go, /Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/tools/mqtt-bench/client.go, /Users/giandonatoinverso/Progetti/continuous-software-assurance-system/temp/repository/things/service.go<br>
+                                      <strong>Severity:</strong> MEDIUM<br>
+                                      <strong>Confidence:</strong> MEDIUM<br>
+                                      <strong>Lines and Columns:</strong> 76:36, 67:26, 333:36, 171:34<br>
+                                      <strong>Details:</strong> Implicit memory aliasing in for loop.<br>
+                                      <strong>Tools:</strong> Gosec Mainflux
+                                    </div>
+                                    <hr>
+                                    
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2022-36402<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> kernel: vmwgfx: integer overflow in vmwgfx_execbuf.c<br>
+                                        <strong>V2 Score:</strong> <br>
+                                        <strong>V3 Score:</strong> 5.5<br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    </td>
+                </tr>
+                
+                <tr>
+                    <td style='white-space:nowrap'>287</td>
+                    <td>Mainflux</td>
+                    <td>HIGH</td>
+                    <td>
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2022-22576<br>
+                                        <strong>Severity:</strong> HIGH<br>
+                                        <strong>Target:</strong> nginx:1.20.0-alpine<br>
+                                        <strong>Title:</strong> curl: OAUTH2 bearer bypass in connection re-use<br>
+                                        <strong>V2 Score:</strong> 5.5<br>
+                                        <strong>V3 Score:</strong> 8.1<br>
+                                        <strong>Tools:</strong> Trivy Docker
+                                    </div>
+                                    <hr>
+                                    </td>
+                </tr>
+                
+                <tr>
+                    <td style='white-space:nowrap'>706</td>
+                    <td>Mainflux</td>
+                    <td>HIGH</td>
+                    <td>
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2023-27561<br>
+                                        <strong>Severity:</strong> HIGH<br>
+                                        <strong>Target:</strong> Trivy Mainflux Golang<br>
+                                        <strong>Title:</strong> runc: volume mount race condition (regression of CVE-2019-19921)<br>
+                                        <strong>V2 Score:</strong> <br>
+                                        <strong>V3 Score:</strong> 7.0<br>
+                                        <strong>Tools:</strong> Trivy Mainflux Golang
+                                    </div>
+                                    <hr>
+                                    </td>
+                </tr>
+                
+                <tr>
+                    <td style='white-space:nowrap'>399</td>
+                    <td>ExternalDevice</td>
+                    <td>MEDIUM</td>
+                    <td>
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2013-7445<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> kernel: memory exhaustion via crafted Graphics Execution Manager (GEM) objects<br>
+                                        <strong>V2 Score:</strong> 6.0<br>
+                                        <strong>V3 Score:</strong> <br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    </td>
+                </tr>
+                
+                <tr>
+                    <td style='white-space:nowrap'>294</td>
+                    <td>ExternalDevice</td>
+                    <td>MEDIUM</td>
+                    <td>
+                                    <div>
+                                        <strong>CVE:</strong> CVE-2022-25836<br>
+                                        <strong>Severity:</strong> MEDIUM<br>
+                                        <strong>Target:</strong> trivy_external_device<br>
+                                        <strong>Title:</strong> <br>
+                                        <strong>V2 Score:</strong> <br>
+                                        <strong>V3 Score:</strong> 7.5<br>
+                                        <strong>Tools:</strong> trivy_external_device
+                                    </div>
+                                    <hr>
+                                    </td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+                        <h2>CVE distribution tool</h2><h3>Mainflux</h3>
+                <table border="1" cellspacing="0" cellpadding="5">
+                    <tr>
+                        <th>CWE</th><th>Gosec Mainflux</th><th>Trivy Docker</th><th>Trivy Mainflux Golang</th><th>Total</th></tr><tr><td>CWE-20</td><td>-</td><td>1</td><td>-</td><td>1</td></tr><tr><td>CWE-118</td><td>1</td><td>-</td><td>-</td><td>1</td></tr><tr><td>CWE-200</td><td>-</td><td>6</td><td>-</td><td>6</td></tr><tr><td>CWE-287</td><td>-</td><td>1</td><td>-</td><td>1</td></tr><tr><td>CWE-400</td><td>1</td><td>3</td><td>2</td><td>6</td></tr><tr><td>CWE-522</td><td>-</td><td>3</td><td>-</td><td>3</td></tr><tr><td>CWE-706</td><td>-</td><td>-</td><td>1</td><td>1</td></tr></table><br><h3>HomeAssistant</h3>
+                <table border="1" cellspacing="0" cellpadding="5">
+                    <tr>
+                        <th>CWE</th><th>Bandit</th><th>Trivy Python</th><th>Total</th></tr><tr><td>CWE-20</td><td>1</td><td>-</td><td>1</td></tr><tr><td>CWE-400</td><td>1</td><td>-</td><td>1</td></tr><tr><td>CWE-502</td><td>1</td><td>-</td><td>1</td></tr></table><br><h3>ExternalDevice</h3>
+                <table border="1" cellspacing="0" cellpadding="5">
+                    <tr>
+                        <th>CWE</th><th>Lynis ExternalDevice</th><th>trivy_external_device</th><th>Total</th></tr><tr><td>CWE-20</td><td>-</td><td>4</td><td>4</td></tr><tr><td>CWE-118</td><td>-</td><td>1</td><td>1</td></tr><tr><td>CWE-200</td><td>-</td><td>10</td><td>10</td></tr><tr><td>CWE-284</td><td>-</td><td>2</td><td>2</td></tr><tr><td>CWE-294</td><td>-</td><td>1</td><td>1</td></tr><tr><td>CWE-399</td><td>-</td><td>1</td><td>1</td></tr><tr><td>CWE-400</td><td>-</td><td>10</td><td>10</td></tr><tr><td>CWE-502</td><td>-</td><td>1</td><td>1</td></tr></table><br>
+                        <h2>Severity distribution per label</h2><h3>Mainflux</h3><div style='display: flex; justify-content: space-around; margin-bottom: 20px;'><table border='1' cellspacing='0' cellpadding='5' style='width: 11%;'><caption>Gosec Mainflux</caption><tr><th>Severity</th><th>Conteggio</th></tr><tr><td>CRITICAL</td><td>0</td></tr><tr><td>HIGH</td><td>0</td></tr><tr><td>MEDIUM</td><td>1</td></tr><tr><td>LOW</td><td>0</td></tr><tr><td>UNKNOWN</td><td>0</td></tr></table><table border='1' cellspacing='0' cellpadding='5' style='width: 11%;'><caption>Trivy Mainflux Golang</caption><tr><th>Severity</th><th>Conteggio</th></tr><tr><td>CRITICAL</td><td>0</td></tr><tr><td>HIGH</td><td>2</td></tr><tr><td>MEDIUM</td><td>1</td></tr><tr><td>LOW</td><td>0</td></tr><tr><td>UNKNOWN</td><td>0</td></tr></table><table border='1' cellspacing='0' cellpadding='5' style='width: 11%;'><caption>Trivy Docker</caption><tr><th>Severity</th><th>Conteggio</th></tr><tr><td>CRITICAL</td><td>0</td></tr><tr><td>HIGH</td><td>5</td></tr><tr><td>MEDIUM</td><td>6</td></tr><tr><td>LOW</td><td>0</td></tr><tr><td>UNKNOWN</td><td>0</td></tr></table></div><h3>HomeAssistant</h3><div style='display: flex; justify-content: space-around; margin-bottom: 20px;'><table border='1' cellspacing='0' cellpadding='5' style='width: 11%;'><caption>Bandit</caption><tr><th>Severity</th><th>Conteggio</th></tr><tr><td>CRITICAL</td><td>0</td></tr><tr><td>HIGH</td><td>0</td></tr><tr><td>MEDIUM</td><td>1</td></tr><tr><td>LOW</td><td>0</td></tr><tr><td>UNKNOWN</td><td>0</td></tr></table><table border='1' cellspacing='0' cellpadding='5' style='width: 11%;'><caption>Trivy Python</caption><tr><th>Severity</th><th>Conteggio</th></tr><tr><td>CRITICAL</td><td>0</td></tr><tr><td>HIGH</td><td>0</td></tr><tr><td>MEDIUM</td><td>0</td></tr><tr><td>LOW</td><td>0</td></tr><tr><td>UNKNOWN</td><td>0</td></tr></table></div><h3>ExternalDevice</h3><div style='display: flex; justify-content: space-around; margin-bottom: 20px;'><table border='1' cellspacing='0' cellpadding='5' style='width: 11%;'><caption>trivy_external_device</caption><tr><th>Severity</th><th>Conteggio</th></tr><tr><td>CRITICAL</td><td>0</td></tr><tr><td>HIGH</td><td>1</td></tr><tr><td>MEDIUM</td><td>24</td></tr><tr><td>LOW</td><td>0</td></tr><tr><td>UNKNOWN</td><td>0</td></tr></table><table border='1' cellspacing='0' cellpadding='5' style='width: 11%;'><caption>Lynis ExternalDevice</caption><tr><th>Severity</th><th>Conteggio</th></tr><tr><td>CRITICAL</td><td>0</td></tr><tr><td>HIGH</td><td>0</td></tr><tr><td>MEDIUM</td><td>0</td></tr><tr><td>LOW</td><td>0</td></tr><tr><td>UNKNOWN</td><td>0</td></tr></table></div>
+                    </body>
+                    </html>
+                    

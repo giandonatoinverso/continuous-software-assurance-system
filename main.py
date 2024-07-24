@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import os
 from security_controls.gosec.gosec import Gosec
 from security_controls.bandit.bandit import Bandit
 from security_controls.trivy.trivy import Trivy
@@ -108,9 +109,55 @@ def load_and_instantiate_controls():
 
 
 def report_generation():
-    cwe_utils = Cwe()
-    cwe_utils.read_cwe_aggregation_config("config/config.json")
-    pprint(cwe_utils.get_cve_distribution_tool())
+    cwe = Cwe()
+    cwe.read_cwe_aggregation_config("config/config.json")
+    cwe.generate_html_table(os.getenv("REPORT_PATH")+"cwe_aggregation.html")
 
-#load_and_instantiate_controls()
+    print("Categories:")
+    pprint(cwe.get_cwe_aggregation_categories())
+
+    print("Threats and CWE:")
+    pprint(cwe.get_aggregation_threats_and_cwe())
+
+    print("Unique CWE searched")
+    pprint(cwe.get_aggregation_unique_cwes())
+
+    print("Unique CWE found")
+    pprint(cwe.get_files_unique_cwes())
+
+    print("Unique CVE found")
+    pprint(cwe.get_files_unique_cves())
+
+    print("Severity distribution")
+    pprint(cwe.get_cve_severity_distribution())
+
+    print("CWE found")
+    pprint(cwe.get_found_cwes())
+
+    print("CWE distribution across categories")
+    pprint(cwe.get_cwe_distribution_across_categories())
+
+    print("CVE for found CWE")
+    pprint(cwe.get_cves_for_found_cwes())
+
+    print("CVE distribution tool")
+    pprint(cwe.get_cve_distribution_tool())
+
+    print("Severity distribution for found cves")
+    pprint(cwe.get_severity_distribution_for_found_cves())
+
+    print("Overall risk")
+    pprint(cwe.calculate_overall_risk())
+
+    print("Risk per CWE")
+    pprint(cwe.calculate_risk_per_cwe())
+
+    print("Risk per threat")
+    pprint(cwe.calculate_risk_per_threat())
+
+    print("Severity distribution per label")
+    pprint(cwe.get_severity_distribution_per_label())
+
+
+# load_and_instantiate_controls()
 report_generation()
