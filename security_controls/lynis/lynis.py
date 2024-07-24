@@ -37,13 +37,13 @@ class Lynis:
         ssh_client.send_command(f"sudo touch execute_scripts.py", SshClient.onNotZeroExitCodeAction.STOP)
         ssh_client.send_command(f"sudo chmod 777 execute_scripts.py", SshClient.onNotZeroExitCodeAction.STOP)
 
-        with open("data/lynis_audit.sh", "r") as file:
+        with open("security_controls/lynis/data/lynis_audit.sh", "r") as file:
             content = file.read()
             encoded_content = base64.b64encode(content.encode('utf-8')).decode('utf-8')
             ssh_client.send_command(f"""sudo sh -c 'echo "{encoded_content}" | base64 --decode > lynis_audit.sh'""",
                                     SshClient.onNotZeroExitCodeAction.STOP)
 
-        with open("data/execute_scripts.py", "r") as file:
+        with open("security_controls/lynis/data/execute_scripts.py", "r") as file:
             content = file.read()
             encoded_content = base64.b64encode(content.encode('utf-8')).decode('utf-8')
             ssh_client.send_command(f"""sudo sh -c 'echo "{encoded_content}" | base64 --decode > execute_scripts.py'""",
@@ -54,7 +54,7 @@ class Lynis:
             ssh_client = self._get_ssh_client()
             ssh_client.connect_ssh()
             for test in self.skip_test:
-                ssh_client.send_command(f"""sudo sh -c 'echo "skip-test={test}" >> /lynis/default.prf'""",
+                ssh_client.send_command(f"""sudo sh -c 'echo "skip-test={test}" >> lynis/default.prf'""",
                                         SshClient.onNotZeroExitCodeAction.STOP)
 
     def lynis_execute(self):
@@ -66,7 +66,7 @@ class Lynis:
     def collect_lynis_output(self):
         ssh_client = self._get_ssh_client()
         ssh_client.connect_ssh()
-        ssh_client.get_file(os.getenv('TEMP_PATH')+"lynis_report.txt", "lynis_report.txt")
+        ssh_client.get_file(os.getenv('TEMP_PATH')+"lynis_report.txt", "lynis/lynis_report.txt")
         lynis_parser = LynisParser(os.getenv('TEMP_PATH')+"lynis_report.txt")
         system_data = lynis_parser.read_system_data().get_system_data()
         boot_and_services = lynis_parser.read_boot_and_services().get_boot_and_services()

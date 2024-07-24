@@ -58,7 +58,7 @@ def load_and_instantiate_controls():
                     hardening_index_threshold=control_config["evaluation"]["hardening_index_threshold"],
                     output_path=control_config["final_output"],
                     target=control_config["target"],
-                    target_port=control_config["port"],
+                    target_port=control_config["target_port"],
                     target_username=control_credentials.get("username"),
                     target_password=control_credentials.get("password", ""),
                     target_private_key=control_credentials.get("private_key", ""),

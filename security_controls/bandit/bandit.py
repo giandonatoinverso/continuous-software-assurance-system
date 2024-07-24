@@ -32,7 +32,7 @@ class Bandit:
         subprocess.Popen(command, shell=True).wait()
 
     def generate_output(self):
-        bandit_parser = BanditParser(self.input_path)
+        bandit_parser = BanditParser(os.getenv('RAW_PATH')+self.input_path)
         self.output = bandit_parser.cwe_targets_aggregation(os.getenv('REPORT_PATH')+self.output_path)
         bandit_parser.json_to_html(os.getenv('REPORT_PATH')+self.output_path, os.getenv('REPORT_PATH')+self.html_path)
 

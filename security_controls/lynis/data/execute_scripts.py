@@ -9,4 +9,4 @@ while True:
     if lynis == b'':
         break
     else:
-        time.sleep(300)
+        time.sleep(60)

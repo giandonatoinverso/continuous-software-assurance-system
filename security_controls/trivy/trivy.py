@@ -13,7 +13,7 @@ class Trivy:
                  oauth_token=None, target_name=None, compose_file_url=None, env_file_url=None,
                  docker_username=None, docker_host=None, docker_password=None, remotefs_timeout=None, remotefs_skipdirs=None, remotefs_skipfiles=None,
                  remotefs_version=None, remotefs_platform=None):
-        supported_modes = {'docker', 'fs', 'remotefs'}
+        supported_modes = {'trivy_docker', 'trivy_fs', 'trivy_remotefs'}
         if mode not in supported_modes:
             raise Exception(f"The parameter {mode} is invalid. Must belong to: {supported_modes}")
 
@@ -53,16 +53,16 @@ class Trivy:
         return self.evaluate_output()
 
     def download_resources(self):
-        if self.mode == "docker":
+        if self.mode == "trivy_docker":
             self.helper.download_file(self.compose_file_url, self.compose_file_path, self.oauth_token)
 
             if self.env_file_url is not None:
                 self.helper.download_file(self.env_file_url, self.env_file_path, self.oauth_token)
 
-        elif self.mode == "fs":
+        elif self.mode == "trivy_fs":
             self.helper.clone_repository(self.target, self.tempfs, self.oauth_token)
 
-        elif self.mode == "remotefs":
+        elif self.mode == "trivy_remotefs":
             ssh_client = self._get_ssh_client()
             ssh_client.connect_ssh()
             ssh_client.send_command(f"sudo wget https://github.com/aquasecurity/trivy/releases/download/v{self.remotefs_version}/trivy_{self.remotefs_version}_{self.remotefs_platform}",
@@ -75,11 +75,11 @@ class Trivy:
             raise Exception(f"Invalid {self.mode}")
 
     def execute_trivy(self):
-        if self.mode == "docker":
+        if self.mode == "trivy_docker":
             self.trivy_docker()
-        elif self.mode == "fs":
+        elif self.mode == "trivy_fs":
             self.trivy_fs()
-        elif self.mode == "remotefs":
+        elif self.mode == "trivy_remotefs":
             self.trivy_remote_fs()
         else:
             raise Exception(f"Invalid {self.mode}")
@@ -155,13 +155,13 @@ class Trivy:
             return 0
 
     def clean(self):
-        if self.mode == "docker":
+        if self.mode == "trivy_docker":
             self.helper.remove_path_contents(os.getenv('TEMP_PATH'))
 
-        elif self.mode == "fs":
+        elif self.mode == "trivy_fs":
             self.helper.remove_path_contents(os.getenv('TEMP_PATH'))
 
-        elif self.mode == "remotefs":
+        elif self.mode == "trivy_remotefs":
             ssh_client = self._get_ssh_client()
             ssh_client.connect_ssh()
             ssh_client.send_command(f"sudo rm {self.target_name}.json", SshClient.onNotZeroExitCodeAction.STOP)
