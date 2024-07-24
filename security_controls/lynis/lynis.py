@@ -3,6 +3,7 @@ from utils.ssh_client import SshClient
 import base64
 import os
 
+
 class Lynis:
     def __init__(self, lynis_version, hardening_index_threshold, target, target_port, target_username, target_password=None, target_private_key=None, skip_test=None):
         self.lynis_report = dict()
