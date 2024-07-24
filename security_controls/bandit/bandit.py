@@ -29,13 +29,13 @@ class Bandit:
         self.helper.clone_repository(self.target, self.repository_path, self.oauth_token)
 
     def bandit_execute(self):
-        command = f"bandit -r {self.repository_path}/ -f json -o {self.input_path}"
+        command = f"bandit -r {self.repository_path}/ -f json -o {os.getenv('RAW_PATH')}{self.input_path}"
         subprocess.Popen(command, shell=True).wait()
 
     def generate_output(self):
         bandit_parser = BanditParser(self.input_path)
-        self.output = bandit_parser.cwe_targets_aggregation(self.output_path)
-        bandit_parser.json_to_html(self.output_path, self.html_path)
+        self.output = bandit_parser.cwe_targets_aggregation(os.getenv('REPORT_PATH')+self.output_path)
+        bandit_parser.json_to_html(os.getenv('REPORT_PATH')+self.output_path, os.getenv('REPORT_PATH')+self.html_path)
 
     def evaluate_output(self):
         severity_levels = {
