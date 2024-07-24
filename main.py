@@ -5,15 +5,6 @@ from security_controls.trivy.trivy import Trivy
 from security_controls.lynis.lynis import Lynis
 import json
 
-""""
-trivy = Trivy("fs", "mainflux_trivy.json", "MEDIUM", 2, target="https://github.com/MainfluxLabs/mainflux", target_name="Trivy Mainflux Golang")
-trivy = Trivy("docker", "mainflux_docker.json", "MEDIUM", 2, target="docker.io/",
-              compose_file_url="https://raw.githubusercontent.com/giandonatoinverso/continuous-software-assurance-system/main/docker_compose.yaml",
-              env_file_url="https://raw.githubusercontent.com/giandonatoinverso/continuous-software-assurance-system/main/envfile.env",
-              docker_host="unix:///Users/giandonatoinverso/.docker/run/docker.sock")
-trivy.execute()
-"""
-
 
 def load_and_instantiate_controls():
     with open("config/config.json", "r") as f:
@@ -117,5 +108,6 @@ def load_and_instantiate_controls():
                 raise ValueError(f"Security control type not supported: {control_name}")
 
     return security_controls_by_category
+
 
 controls = load_and_instantiate_controls()

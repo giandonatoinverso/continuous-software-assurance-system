@@ -7,6 +7,7 @@ from utils.helper import Helper
 from utils.ssh_client import SshClient
 from utils.cve import CveUtils
 
+
 class Trivy:
     def __init__(self, mode, output_path, report_path, evaluation_severity, evaluation_threshold,
                  target=None, target_port=None, target_username=None, target_password=None, target_private_key=None,
