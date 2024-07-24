@@ -5,10 +5,10 @@ from parser.trivy.trivy_vulnerability_analysis import TrivyVulnerabilityAnalysis
 from utils.compose_utils import ComposeUtils
 from utils.helper import Helper
 from utils.ssh_client import SshClient
-
+from utils.cve import CveUtils
 
 class Trivy:
-    def __init__(self, mode, output_path, evaluation_severity, evaluation_threshold,
+    def __init__(self, mode, output_path, report_path, evaluation_severity, evaluation_threshold,
                  target=None, target_port=None, target_username=None, target_password=None, target_private_key=None,
                  oauth_token=None, target_name=None, compose_file_url=None, env_file_url=None,
                  docker_username=None, docker_host=None, docker_password=None, remotefs_timeout=None, remotefs_skipdirs=None, remotefs_skipfiles=None,
@@ -22,6 +22,7 @@ class Trivy:
         self.trivy_grouped_vulnerabilities = dict()
         self.helper = Helper()
         self.output_path = output_path
+        self.report_path = report_path
         self.evaluation_severity = evaluation_severity
         self.evaluation_threshold = evaluation_threshold
         self.target = target
@@ -129,6 +130,10 @@ class Trivy:
         trivy_grouped_vulnerabilities_json = f"{os.getenv('REPORT_PATH')}{self.output_path}"
         with open(trivy_grouped_vulnerabilities_json, mode='w') as json_file:
             json.dump(trivy_grouped_vulnerabilities, json_file, indent=4)
+
+        cve_utils = CveUtils()
+        cve_utils.json_to_html(trivy_grouped_vulnerabilities_json,
+                               os.getenv('REPORT_PATH')+self.report_path)
 
     def evaluate_output(self):
         severity_levels = {

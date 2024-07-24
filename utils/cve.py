@@ -2,7 +2,8 @@ import json
 import csv
 from collections import defaultdict
 
-class Cve:
+
+class CveUtils:
     def __init__(self):
         pass
 
