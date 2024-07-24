@@ -1,0 +1,10 @@
+version: '3'
+
+vars:
+  DOCKER_REPO_HOST: giandonatoinverso
+  DOCKER_REPO_PROJECT: continuous-software-assurance-system
+
+tasks:
+  publish-docker:
+    cmds:
+      - docker buildx build -f Dockerfile . -t {{.DOCKER_REPO_HOST}}/{{.DOCKER_REPO_PROJECT}}:latest --push
