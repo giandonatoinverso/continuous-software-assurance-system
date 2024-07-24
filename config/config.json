@@ -28,8 +28,8 @@
         "credential": "mainflux_trivy_docker",
         "name": "Trivy Docker",
         "target": "docker.io/",
-        "compose_file": "https://github.com/MainfluxLabs/mainflux/blob/master/docker/docker-compose.yml",
-        "env_file": "https://github.com/MainfluxLabs/mainflux/blob/master/docker/.env",
+        "compose_file": "https://raw.githubusercontent.com/giandonatoinverso/continuous-software-assurance-system/main/docker_compose.yaml",
+        "env_file": "https://raw.githubusercontent.com/giandonatoinverso/continuous-software-assurance-system/main/envfile.env",
         "docker_host": "unix:///Users/giandonatoinverso/.docker/run/docker.sock",
         "final_output": "mainflux_docker.json",
         "report_output": "mainflux_docker.html",
@@ -72,62 +72,6 @@
         "evaluation": {
           "severity": "MEDIUM",
           "threshold": 2
-        }
-      }
-    },
-    "threats": {
-      "Intentional physical damage": [1252, 200],
-      "Unintentional damage/loss of information or IT assets": [250, 710, 199, 277, 16],
-      "Poisoning": [494, 502],
-      "Failures/malfunction": [385, 118],
-      "Interception and unauthorized acquisition": [294, 300, 284, 200],
-      "Nefarious activity/abuse": [522, 400, 94, 20, 77, 359, 287, 285],
-      "Organizational threats": [1242, 706, 399]
-    }
-  },
-  "ExternalDevice": {
-    "security_controls": {
-      "trivy_remotefs": {
-        "credential": "external_device",
-        "name": "Trivy ExternalDevice",
-        "target": "ec2-3-98-121-184.ca-central-1.compute.amazonaws.com",
-        "target_port": "22",
-        "final_output": "external_device_trivy.json",
-        "report_output": "external_device_trivy.html",
-        "version": "0.49.1",
-        "platform": "Linux-ARM.deb",
-        "timeout": "1h",
-        "skip_files": [
-          "**/*.jar",
-          "**/*.war",
-          "**/*.par",
-          "**/*.ear"
-        ],
-        "skip_dirs": [
-          "/mnt/ramdisk"
-        ],
-        "evaluation": {
-          "severity": "MEDIUM",
-          "threshold": 2
-        }
-      },
-      "lynis": {
-        "credential": "external_device",
-        "name": "Lynis ExternalDevice",
-        "target": "ec2-3-98-121-184.ca-central-1.compute.amazonaws.com",
-        "target_port": "22",
-        "final_output": "external_device_lynis.json",
-        "version": "3.1.1",
-        "skip_test": [
-          "PKGS-7345",
-          "PKGS-7392",
-          "NETW-2600",
-          "HTTP-6708",
-          "CRYP-7902",
-          "KRNL-6000"
-        ],
-        "evaluation": {
-          "hardening_index_threshold": 50
         }
       }
     },
