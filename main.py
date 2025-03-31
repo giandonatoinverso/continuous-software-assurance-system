@@ -159,5 +159,5 @@ def report_generation():
     pprint(cwe.get_severity_distribution_per_label())
 
 
-# load_and_instantiate_controls()
+load_and_instantiate_controls()
 report_generation()
