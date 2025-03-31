@@ -23,14 +23,14 @@ These tools are orchestrated to run as part of a unified assurance process, allo
 
 Allora spieghiamo la struttura del progetto. Io ti dico in breve cosa c'è e tu estendi:
 
-## utils folder
+## `utils/` – Utility Scripts
   - Cartella contenente script di utility:
     - Python script defines a utility class for processing, merging, and visualizing CVE vulnerability data from security scanners, sorting entries by severity and enriching them with details such as CWE, CVSS V2/V3 scores, and affected targets.
     - Python script defines a utility class for extracting and normalizing Docker image names from `docker-compose.yml` files, optionally replacing environment variables defined in a `.env` file to return a clean list of service images. 
     - Python script implements a wrapper class based on `fabric` and `paramiko` to establish SSH connections using either password or private key authentication, allowing remote command execution with exit code handling, as well as file transfer to and from remote hosts.
     - Python script defines a utility class for common repository and file system operations, including cloning Git repositories (with optional access token support), downloading files from remote URLs with authentication headers, and recursively deleting the contents of local directories.
 
-## security_controls folder
+## `security_controls/` – Executable Security Modules
 
 The `security_controls` directory contains a set of modular Python classes, each implementing an automated security control. These controls are designed to evaluate codebases, Docker environments, filesystems, and remote systems through static analysis or system audit tools.
 All controls share a common structure and lifecycle:
@@ -69,7 +69,7 @@ All controls share a common structure and lifecycle:
 ### Config folder
 The `config/` directory contains the centralized configuration for running the security controls defined in the `security_controls/` module. It enables project-specific setup for both **which security checks to run** and **how to authenticate** against local, remote, or cloud resources.
 
-#### `config.json`
+#### `config/` – Execution Logic per Target
 
 This file defines **which security controls are executed for each project**, along with their parameters, output paths, and evaluation policies.
 
@@ -87,7 +87,7 @@ Each target system contains:
 
 - `threats`: a mapping of threat categories to CWE IDs, enabling post-processing and risk mapping of discovered vulnerabilities.
 
-#### `credential.json`
+#### `credential.json` - Secure Access Config
 
 This file contains the **authentication credentials** referenced in `config.json` under the `credential` field.
 
@@ -96,7 +96,7 @@ Each entry is a key-value map identified by a unique name (e.g. `mainflux`, `hom
 - For Docker: `username`, `password`
 - For remote systems: `username`, `password`, `private_key`
 
-### `parser/` – Output Parsers for Security Tools
+### `parser/` – Output Post-Processing
 
 The `parser/` directory contains modules responsible for transforming the raw output of external security tools into structured and normalized JSON formats. These parsers are designed to reduce, sanitize, and aggregate results for subsequent reporting, evaluation, and threat mapping.
 
