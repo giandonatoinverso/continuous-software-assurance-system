@@ -20,15 +20,20 @@ This software performs a coordinated set of security checks on multiple targets 
 These tools are orchestrated to run as part of a unified assurance process, allowing for a comprehensive assessment of software artifacts and infrastructure components across different stages of the DevSecOps lifecycle.
 
 # Project Structure
-
-Allora spieghiamo la struttura del progetto. Io ti dico in breve cosa c'è e tu estendi:
-
 ## `utils/` – Utility Scripts
-  - Cartella contenente script di utility:
-    - Python script defines a utility class for processing, merging, and visualizing CVE vulnerability data from security scanners, sorting entries by severity and enriching them with details such as CWE, CVSS V2/V3 scores, and affected targets.
-    - Python script defines a utility class for extracting and normalizing Docker image names from `docker-compose.yml` files, optionally replacing environment variables defined in a `.env` file to return a clean list of service images. 
-    - Python script implements a wrapper class based on `fabric` and `paramiko` to establish SSH connections using either password or private key authentication, allowing remote command execution with exit code handling, as well as file transfer to and from remote hosts.
-    - Python script defines a utility class for common repository and file system operations, including cloning Git repositories (with optional access token support), downloading files from remote URLs with authentication headers, and recursively deleting the contents of local directories.
+This directory includes reusable classes that support scanning, data collection, and remote execution across the system:
+
+- **CVE helper (`helper.py`)**  
+  Processes and merges CVE reports from different tools, sorts them by severity, and enriches entries with metadata such as CWE IDs, CVSS v2/v3 scores, and affected targets.
+
+- **Docker image extractor (`compose_utils.py`)**  
+  Parses `docker-compose.yml` files (optionally using `.env` variables) to extract and normalize service image names for use in Docker-based scans.
+
+- **SSH client wrapper (`ssh_client.py`)**  
+  Manages remote connections over SSH using password or private key authentication. Supports command execution, error handling, and file transfers.
+
+- **Repository and file manager (`helper.py`)**  
+  Provides functions to clone Git repositories (with optional OAuth token), download authenticated files, and recursively clean local directories.
 
 ## `security_controls/` – Executable Security Modules
 
@@ -51,7 +56,7 @@ All controls share a common structure and lifecycle:
 
 ### Available Security Controls
 
-- **bandit**
+- **Bandit**
   - It clones the target repository, runs Bandit, parses vulnerabilities grouped by CWE and target, and evaluates the findings against a configurable severity threshold.
   
 - **Gosec**
@@ -69,7 +74,7 @@ All controls share a common structure and lifecycle:
 ### Config folder
 The `config/` directory contains the centralized configuration for running the security controls defined in the `security_controls/` module. It enables project-specific setup for both **which security checks to run** and **how to authenticate** against local, remote, or cloud resources.
 
-#### `config/` – Execution Logic per Target
+#### `config.json` – Execution Logic per Target
 
 This file defines **which security controls are executed for each project**, along with their parameters, output paths, and evaluation policies.
 
@@ -177,7 +182,6 @@ Where:
 - *sₘₐₓ*: max severity score (9)
 - *vₘₐₓ*: max V3Score (10)
 
----
 
 ### **Risk Score per CWE**
 
@@ -186,7 +190,6 @@ Where:
 - Computed per CWE.
 - Normalized by the number of findings to avoid overweighting less frequent but severe CWEs.
 
----
 
 ### **Risk Score per Threat**
 
@@ -195,14 +198,12 @@ Where:
 - Computed per threat.
 - Aggregates all CWEs under the same threat and applies normalization using the threat with the highest number of findings.
 
----
 
 ### **CVE Distribution per Tool**
 
 - For each CWE and category, shows how many tools detected matching CVEs.
 - Output is presented as a matrix of `CWE × Tool` with total counts.
 
----
 
 ### **Severity Distribution per Label**
 
